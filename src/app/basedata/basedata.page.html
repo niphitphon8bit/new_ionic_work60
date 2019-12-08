@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>basedata</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/develops']">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <font style="font-size: 10px; margin-left:10%;">ด้านการพัฒนา</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/food-type']" routerLinkActive="router-link-active">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <font style="font-size: 10px;">food-type</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/place']" routerLinkActive="router-link-active">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 10px; margin-left:10%;">basedata/place</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/major']" routerLinkActive="router-link-active">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 10px;">basedata/major</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/bank']" routerLinkActive="router-link-active">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 10px; margin-left:10%;">basedata/bank</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/expert-type']" routerLinkActive="router-link-active">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 10px;">basedata/expert-type</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
