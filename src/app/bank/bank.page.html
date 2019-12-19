@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>bank</ion-title>
@@ -8,5 +8,27 @@
 </ion-header>
 
 <ion-content>
+  <ion-list *ngFor="let bank of banks">
+    <!-- Multi-line sliding item with icon options on both sides -->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>
+          <h2>{{bank.name}}</h2>
+        </ion-label>
+        <ion-toggle slot="end" name="kiwi" color="success" [(ngModel)]="bank.status"></ion-toggle>
+      </ion-item>
 
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/basedata/bank/bank-insert']" routerLinkActive="router-link-active">
+    <ion-fab-button>
+      <ion-icon name="add">
+      </ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
