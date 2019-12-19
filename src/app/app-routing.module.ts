@@ -52,11 +52,21 @@ const routes: Routes = [
     loadChildren: () => import('./expert/expert.module').then( m => m.ExpertPageModule)
   },
   {
+    path: 'basedata/bank/bank-insert',
+    loadChildren: () => import('./bank-insert/bank-insert.module').then( m => m.BankInsertPageModule)
+  },
+  {
+    path: 'basedata/expert-type/expert-type-insert',
+    loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then( m => m.ExpertTypeInsertPageModule)
+  }  {
+    path: 'basedata/food-type/food-insert',
+    loadChildren: () => import('./food-insert/food-insert.module').then( m => m.FoodInsertPageModule)
+  },
+ {
     path: 'expert-in-insert',
     loadChildren: () => import('./expert-in-insert/expert-in-insert.module').then( m => m.ExpertInInsertPageModule)
   },
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
