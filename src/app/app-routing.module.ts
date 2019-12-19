@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'expert',
     loadChildren: () => import('./expert/expert.module').then( m => m.ExpertPageModule)
   },
+  {
+    path: 'develops-insert',
+    loadChildren: () => import('./develops-insert/develops-insert.module').then( m => m.DevelopsInsertPageModule)
+  },
 ];
 
 @NgModule({
