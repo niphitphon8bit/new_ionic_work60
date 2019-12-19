@@ -58,14 +58,15 @@ const routes: Routes = [
   {
     path: 'basedata/expert-type/expert-type-insert',
     loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then( m => m.ExpertTypeInsertPageModule)
-  }  {
+  },
+    {
     path: 'basedata/food-type/food-insert',
     loadChildren: () => import('./food-insert/food-insert.module').then( m => m.FoodInsertPageModule)
   },
  {
     path: 'expert-in-insert',
     loadChildren: () => import('./expert-in-insert/expert-in-insert.module').then( m => m.ExpertInInsertPageModule)
-  },
+  }
 ];
 @NgModule({
   imports: [
