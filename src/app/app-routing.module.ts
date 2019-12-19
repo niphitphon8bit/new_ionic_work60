@@ -17,59 +17,60 @@ const routes: Routes = [
   },
   {
     path: 'basedata/develops',
-    loadChildren: () => import('./develops/develops.module').then( m => m.DevelopsPageModule)
+    loadChildren: () => import('./develops/develops.module').then(m => m.DevelopsPageModule)
   },
   {
     path: 'basedata/bank',
-    loadChildren: () => import('./bank/bank.module').then( m => m.BankPageModule)
+    loadChildren: () => import('./bank/bank.module').then(m => m.BankPageModule)
   },
   {
     path: 'basedata/food-type',
-    loadChildren: () => import('./food-type/food-type.module').then( m => m.FoodTypePageModule)
+    loadChildren: () => import('./food-type/food-type.module').then(m => m.FoodTypePageModule)
   },
   {
     path: 'basedata/place',
-    loadChildren: () => import('./place/place.module').then( m => m.PlacePageModule)
+    loadChildren: () => import('./place/place.module').then(m => m.PlacePageModule)
   },
   {
     path: 'basedata/major',
-    loadChildren: () => import('./major/major.module').then( m => m.MajorPageModule)
+    loadChildren: () => import('./major/major.module').then(m => m.MajorPageModule)
   },
   {
     path: 'basedata/expert-type',
-    loadChildren: () => import('./expert-type/expert-type.module').then( m => m.ExpertTypePageModule)
+    loadChildren: () => import('./expert-type/expert-type.module').then(m => m.ExpertTypePageModule)
   },
   {
     path: 'expert/expert-in',
-    loadChildren: () => import('./expert-in/expert-in.module').then( m => m.ExpertInPageModule)
+    loadChildren: () => import('./expert-in/expert-in.module').then(m => m.ExpertInPageModule)
   },
   {
     path: 'expert/expert-out',
-    loadChildren: () => import('./expert-out/expert-out.module').then( m => m.ExpertOutPageModule)
+    loadChildren: () => import('./expert-out/expert-out.module').then(m => m.ExpertOutPageModule)
   },
   {
     path: 'expert',
-    loadChildren: () => import('./expert/expert.module').then( m => m.ExpertPageModule)
+    loadChildren: () => import('./expert/expert.module').then(m => m.ExpertPageModule)
   },
-{
+  {
     path: 'basedata/bank/bank-insert',
-    loadChildren: () => import('./bank-insert/bank-insert.module').then( m => m.BankInsertPageModule)
+    loadChildren: () => import('./bank-insert/bank-insert.module').then(m => m.BankInsertPageModule)
   },
   {
     path: 'basedata/expert-type/expert-type-insert',
-    loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then( m => m.ExpertTypeInsertPageModule)
-  },  {
+    loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then(m => m.ExpertTypeInsertPageModule)
+  }, {
     path: 'basedata/food-type/food-insert',
-    loadChildren: () => import('./food-insert/food-insert.module').then( m => m.FoodInsertPageModule)
+    loadChildren: () => import('./food-insert/food-insert.module').then(m => m.FoodInsertPageModule)
   },
-{
+  {
     path: 'expert/expert-out-insert',
-    loadChildren: () => import('./expert-out-insert/expert-out-insert.module').then( m => m.ExpertOutInsertPageModule)
+    loadChildren: () => import('./expert-out-insert/expert-out-insert.module').then(m => m.ExpertOutInsertPageModule)
   },
-{
+  {
     path: 'develops-insert',
-    loadChildren: () => import('./develops-insert/develops-insert.module').then( m => m.DevelopsInsertPageModule)
-  },];
+    loadChildren: () => import('./develops-insert/develops-insert.module').then(m => m.DevelopsInsertPageModule)
+  },
+];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
