@@ -1,12 +1,75 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
+    <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>bank</ion-title>
+    <ion-title>ด้านข้อมูลธนาคารที่เปิดบัญชี</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/basedata/bank/bank-insert']">
+    <ion-fab-button>
+      <ion-icon name="add" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>ธนาคารกสิกรไทย</ion-label>
+        <ion-toggle color="success"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>ธนาคารกรุงเทพ</ion-label>
+        <ion-toggle color="success" checked></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>ธนาคารไทยพาณิชย์</ion-label>
+        <ion-toggle color="success" checked></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>ธนาคารออมสิน</ion-label>
+        <ion-toggle color="success"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
 
 </ion-content>
