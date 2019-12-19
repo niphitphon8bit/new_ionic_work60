@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>expert_out_insert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <form onsubmit="processForm(event)">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">ชื่อ - นามสกุล <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">ตำแหน่ง <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+          </ion-item>
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin">เพิ่มวิทยากร</ion-button>
+        </div>
+        </ion-list>
+      </form>
+</ion-content>
