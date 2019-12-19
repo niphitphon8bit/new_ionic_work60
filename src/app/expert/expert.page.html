@@ -1,12 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>expert</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>expert</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-row responsive-sm>
+        <ion-col>
+            <ion-card class="card" [routerLink]="['/expert/expert-in']" routerLinkActive="router-link-active">
+                <ion-card-header>
+                    <ion-card-title>
+                        <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+                    </ion-card-title>
+                </ion-card-header>
+                <ion-card-content class="ion-card-content">
+                    <a></a>
+                    <font style="font-size: 10px; margin-left:10%;">expert-in</font>
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
 
+    </ion-row>
 </ion-content>
