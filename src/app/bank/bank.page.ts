@@ -7,7 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankPage implements OnInit {
 
-  constructor() { }
+  public banks = [
+    {
+      name: 'Kasikorn',
+      status: 'true',
+      url: 'base/bank/bank_insert'
+    },
+    {
+      name: 'Thai Army',
+      status: 'true',
+      url: 'base/bank/bank_insert'
+    },
+    {
+      name: 'Krungthai',
+      status: 'false',
+      url: 'base/bank/bank_insert'
+    }
+
+  ];
+
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
