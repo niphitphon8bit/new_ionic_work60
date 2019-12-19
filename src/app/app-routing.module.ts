@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'expert',
     loadChildren: () => import('./expert/expert.module').then( m => m.ExpertPageModule)
   },
+  {
+    path: 'basedata/bank/bank-insert',
+    loadChildren: () => import('./bank-insert/bank-insert.module').then( m => m.BankInsertPageModule)
+  },
 ];
 
 @NgModule({
