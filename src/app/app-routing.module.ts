@@ -51,12 +51,25 @@ const routes: Routes = [
     path: 'expert',
     loadChildren: () => import('./expert/expert.module').then( m => m.ExpertPageModule)
   },
+{
+    path: 'basedata/bank/bank-insert',
+    loadChildren: () => import('./bank-insert/bank-insert.module').then( m => m.BankInsertPageModule)
+  },
   {
+    path: 'basedata/expert-type/expert-type-insert',
+    loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then( m => m.ExpertTypeInsertPageModule)
+  }  {
+    path: 'basedata/food-type/food-insert',
+    loadChildren: () => import('./food-insert/food-insert.module').then( m => m.FoodInsertPageModule)
+  },
+{
+    path: 'expert/expert-out-insert',
+    loadChildren: () => import('./expert-out-insert/expert-out-insert.module').then( m => m.ExpertOutInsertPageModule)
+  },
+{
     path: 'develops-insert',
     loadChildren: () => import('./develops-insert/develops-insert.module').then( m => m.DevelopsInsertPageModule)
-  },
-];
-
+  },];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

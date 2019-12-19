@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>เพิ่มข้อมูลธนาคารที่เปิดบัญชี</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>ชื่อบัญชี <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>ชื่อธนาคาร <ion-text color="danger">*</ion-text></ion-label>
+    <ion-select interface="action-sheet">
+      <ion-select-option>ธนาคารกรุงเทพ</ion-select-option>
+      <ion-select-option>ธนาคารกสิกรไทย</ion-select-option>
+      <ion-select-option>ธนาคารไทยพาณิชย์</ion-select-option>
+      <ion-select-option>ธนาคารออมสิน</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>หมายเหตุ</ion-label>
+    <ion-textarea></ion-textarea>
+  </ion-item>
+
+  <br>
+  <ion-button expand="block" color="success">บันทึก</ion-button>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/basedata/expert-type"></ion-back-button>
+        </ion-buttons>
+    <ion-title>expert_type_insert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen>
+  <form onsubmit="processForm(event)">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">ชื่อประเภทวิทยากรภาษาไทย <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">ชื่อประเภทวิทยากรภาษาอังกฤษ <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" ></ion-input>
+      </ion-item>
+      
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">บันทึก</ion-button>
+    </div>
+  </form>
+</ion-content>
