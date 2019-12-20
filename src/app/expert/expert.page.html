@@ -1,12 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>expert</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>expert</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<div>
+    <ion-col>
+      <ion-card class="card" [routerLink]="['/expert/expert-in']">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-card-content">
+          <font style="font-size: 10px; margin-left:10%;">วิทยากรภายใน</font>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col>
+      <ion-card class="card" [routerLink]="['/expert/expert-out']">
+        <ion-card-header>
+          <ion-card-title>
+            <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-card-content">
+          <font style="font-size: 10px; margin-left:10%;">วิทยากรภายนอก</font>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </div>    
 </ion-content>
