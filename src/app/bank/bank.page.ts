@@ -11,26 +11,32 @@ export class BankPage implements OnInit {
     {
       name: 'Kasikorn',
       status: 'true',
-      url: 'base/bank/bank_insert'
     },
     {
       name: 'Thai Army',
       status: 'true',
-      url: 'base/bank/bank_insert'
     },
     {
       name: 'Krungthai',
       status: 'false',
-      url: 'base/bank/bank_insert'
+    },
+    {
+      name: 'Bangkok Bank',
+      status: 'false',
     }
 
   ];
 
-  constructor() {
 
-   }
+   ngOnInit() {
+  }
 
-  ngOnInit() {
+  
+   remove_bank(bank){
+    let index = this.banks.indexOf(bank);
+    if(index > -1){
+      this.banks.splice(index,1);
+    }
   }
 
 }
