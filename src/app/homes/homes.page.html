@@ -14,11 +14,11 @@
   </ion-label>
 </ion-header>
 
-<ion-content>
+<ion-content style="background-color: #F8F8F8; ">
   <div>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata']">
+        <ion-card class="card" [routerLink]="['/basedata']" id="Basedata">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
@@ -30,7 +30,7 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/expert']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/expert']" routerLinkActive="router-link-active" id="expert">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -44,7 +44,7 @@
     </ion-row>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/project']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/project']" routerLinkActive="router-link-active"id="C">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -57,7 +57,7 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/user']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/user']" routerLinkActive="router-link-active"id="D">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>

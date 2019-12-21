@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-develops-insert',
   templateUrl: './develops-insert.page.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevelopsInsertPage implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   private develops = [
     {
@@ -24,6 +24,10 @@ export class DevelopsInsertPage implements OnInit {
 
   }
   
+  insert_develop(){
+  
+    this.location.back();
+  }
 
 
 }

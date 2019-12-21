@@ -7,11 +7,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="background-color: #F8F8F8; ">
   <div>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata/develops']">
+        <ion-card class="card" [routerLink]="['/basedata/develops']"routerLinkActive="router-link-active" id="Develops">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
@@ -23,21 +23,21 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata/food-type']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/basedata/food-type']" routerLinkActive="router-link-active"id="food">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
             </ion-card-title>
           </ion-card-header>
           <ion-card-content class="ion-card-content">
-            <font style="font-size: 10px;">food-type</font>
+            <font style="font-size: 10px;">ด้านประเภทอาหาร</font>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata/place']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/basedata/place']" routerLinkActive="router-link-active"id="place">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -45,12 +45,12 @@
           </ion-card-header>
           <ion-card-content class="ion-card-content">
             <a></a>
-            <font style="font-size: 10px; margin-left:10%;">basedata/place</font>
+            <font style="font-size: 10px; margin-left:10%;">ด้านสถานที่จัดอบรม</font>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata/major']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/basedata/major']" routerLinkActive="router-link-active"id="major">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -58,14 +58,14 @@
           </ion-card-header>
           <ion-card-content class="ion-card-content">
             <a></a>
-            <font style="font-size: 10px;">basedata/major</font>
+            <font style="font-size: 10px;">ด้านสาขาวิชา</font>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata/bank']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/basedata/bank']" routerLinkActive="router-link-active"id="bank">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -78,7 +78,7 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata/expert-type']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/basedata/expert-type']" routerLinkActive="router-link-active"id="expert">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -86,7 +86,7 @@
           </ion-card-header>
           <ion-card-content class="ion-card-content">
             <a></a>
-            <font style="font-size: 10px;">basedata/expert-type</font>
+            <font style="font-size: 10px;">ด้านประเภทวิทยากร</font>
           </ion-card-content>
         </ion-card>
       </ion-col>
