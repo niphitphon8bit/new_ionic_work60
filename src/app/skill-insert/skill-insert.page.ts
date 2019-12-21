@@ -32,6 +32,10 @@ export class SkillInsertPage implements OnInit {
   ngOnInit() {
   }
   
+  back(){
+    this.location.back();
+  }
+
   insert_skill(){
     console.log(this.skill_name,this.skill_grade);
     
