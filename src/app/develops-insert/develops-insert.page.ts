@@ -21,9 +21,7 @@ export class DevelopsInsertPage implements OnInit {
   }
 
   addvalue(Name,NameEng ){
-    this.route.queryParams.subscribe(this.develops,{
-      NameEng:NameEng
-      });
+
   }
   
 
