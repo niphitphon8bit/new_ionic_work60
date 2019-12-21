@@ -57,14 +57,13 @@ const routes: Routes = [
   },
   {
     path: 'basedata/expert-type/expert-type-insert',
-    loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then( m => m.ExpertTypeInsertPageModule)
-  },{
-    path: 'basedata/food-type/food-insert',
+    loadChildren: () => import('./expert-type-insert/expert-type-insert.module').then(m => m.ExpertTypeInsertPageModule)
+  {    path: 'basedata/food-type/food-insert',
     loadChildren: () => import('./food-insert/food-insert.module').then(m => m.FoodInsertPageModule)
   },
- {
+  {
     path: 'expert-in-insert',
-    loadChildren: () => import('./expert-in-insert/expert-in-insert.module').then( m => m.ExpertInInsertPageModule)
+    loadChildren: () => import('./expert-in-insert/expert-in-insert.module').then(m => m.ExpertInInsertPageModule)
   },
   {
     path: 'expert/expert-out-insert',
@@ -73,12 +72,20 @@ const routes: Routes = [
   {
     path: 'develops-insert',
     loadChildren: () => import('./develops-insert/develops-insert.module').then(m => m.DevelopsInsertPageModule)
-  },  {
-    path: 'major-insert',
-    loadChildren: () => import('./major-insert/major-insert.module').then( m => m.MajorInsertPageModule)
+  },
+{
+    path: 'basedata/skill',
+    loadChildren: () => import('./skill/skill.module').then( m => m.SkillPageModule)
+  },
+  {
+    path: 'basedata/skill/skill-insert',
+    loadChildren: () => import('./skill-insert/skill-insert.module').then( m => m.SkillInsertPageModule)
   },
 
-];
+  {
+    path: 'major-insert',
+    loadChildren: () => import('./major-insert/major-insert.module').then( m => m.MajorInsertPageModule)
+  },];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
