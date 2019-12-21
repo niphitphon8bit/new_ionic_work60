@@ -13,63 +13,18 @@
       <ion-icon name="add" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
+
   <ion-list>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let bank of banks">
       <ion-item>
-        <ion-label>บัญชีเงินฝาก</ion-label>
-        <ion-toggle color="success"></ion-toggle>
+        <ion-label>{{bank.name}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="bank.status"></ion-toggle>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option (click)="unread(item)" color="danger">
+        <ion-item-option (click)="remove_bank(bank)" color="danger">
           <ion-icon name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-
-  <ion-list>
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>บัญชีฝากถอน</ion-label>
-        <ion-toggle color="success" checked></ion-toggle>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="unread(item)" color="danger">
-          <ion-icon name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-
-  <ion-list>
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>บัญชีของนายนิพิฐพนธ์</ion-label>
-        <ion-toggle color="success" checked></ion-toggle>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="unread(item)" color="danger">
-          <ion-icon name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-
-  <ion-list>
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>บัญชีออมทรัพย์</ion-label>
-        <ion-toggle color="success"></ion-toggle>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="unread(item)" color="danger">
-          <ion-icon name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-
-
-
 </ion-content>

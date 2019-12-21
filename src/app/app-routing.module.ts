@@ -77,14 +77,17 @@ const routes: Routes = [
   },
   {
     path: 'basedata/skill',
-    loadChildren: () => import('./skill/skill.module').then( m => m.SkillPageModule)
+    loadChildren: () => import('./skill/skill.module').then(m => m.SkillPageModule)
   },
   {
     path: 'basedata/skill/skill-insert',
-    loadChildren: () => import('./skill-insert/skill-insert.module').then( m => m.SkillInsertPageModule)
+    loadChildren: () => import('./skill-insert/skill-insert.module').then(m => m.SkillInsertPageModule)
   },
 
-];
+  {
+    path: 'major-insert',
+    loadChildren: () => import('./major-insert/major-insert.module').then(m => m.MajorInsertPageModule)
+  },];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

@@ -9,7 +9,21 @@ export class DevelopsInsertPage implements OnInit {
 
   constructor() { }
 
+  private develops = [
+    {
+      Name : '',
+      NameEng : '',
+      Status : ''
+    } ]
+
+
   ngOnInit() {
   }
+
+  addvalue(Name,NameEng ){
+
+  }
+  
+
 
 }
