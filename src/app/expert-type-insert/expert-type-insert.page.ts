@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-expert-type-insert',
   templateUrl: './expert-type-insert.page.html',
@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpertTypeInsertPage implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() {
   }
   insert_expert_type(){
-    
+    this.location.back();
   }
   
  
