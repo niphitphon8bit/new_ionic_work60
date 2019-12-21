@@ -9,65 +9,22 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-sliding>
+    <ion-item-sliding *ngFor="let index of index_of_types">
       <ion-item>
-        <ion-label>วิทยากรบรรยาย</ion-label>
-        <ion-toggle checked color="success"></ion-toggle>
+        <ion-label>{{index.title}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="index.status"></ion-toggle>
       </ion-item>
-
       <ion-item-options side="end">
-        <ion-item-option color="danger"(click)="unread(item)"><ion-icon name="trash"></ion-icon></ion-item-option>
+        <ion-item-option (click)=" remove_expert_type(index)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-    
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>วิทยากรพี่เลี้ยง</ion-label>
-        <ion-toggle checked color="success"></ion-toggle>
-      </ion-item>
+  </ion-list> 
 
-      <ion-item-options side="end">
-        <ion-item-option color="danger"(click)="unread(item)"><ion-icon name="trash"></ion-icon></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-  
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>วิทยากรสันทนาการ</ion-label>
-        <ion-toggle disable color="success"></ion-toggle>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="danger"(click)="unread(item)"><ion-icon name="trash"></ion-icon></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-   
-    <ion-item-sliding>
-      <ion-item> 
-        <ion-label>วิทยากรพี่กลุ่ม</ion-label>
-        <ion-toggle disable color="success"></ion-toggle>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="danger"(click)="unread(item)"><ion-icon name="trash"></ion-icon></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-    
-    <ion-item-sliding>
-      <ion-item>
-        <ion-label>วิทยากรฝึกอบรม</ion-label>
-        <ion-toggle checked color="success"></ion-toggle>
-      </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="danger"(click)="unread(item)"><ion-icon name="trash"></ion-icon></ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-  </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
      <ion-fab-button>
-      <ion-icon name="add" [routerLink]="['/basedata/expert-type/expert-type-insert']" routerLinkActive="router-link-active" ></ion-icon>
+      <ion-icon name="add" [routerLink]="['/basedata/expert-type/expert-type-insert']"  ></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
