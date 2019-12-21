@@ -12,6 +12,7 @@ export class MajorInsertPage implements OnInit {
 
   ngOnInit() {
   }
+  // test
   major_insert(){
     this.location.back();
     // loadChildren: () => import('./major/major.module').then(m => m.MajorPageModule)

@@ -30,6 +30,7 @@ export class MajorPage implements OnInit {
   // data: any;
   ngOnInit() {
   }
+  // test
   remove_major(index_major){
     let index = this.data_major.indexOf(index_major);
     if(index > -1){
