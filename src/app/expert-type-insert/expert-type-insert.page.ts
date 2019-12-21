@@ -11,5 +11,11 @@ export class ExpertTypeInsertPage implements OnInit {
 
   ngOnInit() {
   }
+  insert_expert_type(){
+    
+  }
+  
+ 
+
 
 }
