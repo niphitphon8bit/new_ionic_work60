@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Input } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { SkillInsertPage } from '../skill-insert/skill-insert.page';
 
 @Component({
   selector: 'app-skill',
@@ -7,7 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillPage implements OnInit {
 
-  constructor() { }
+  constructor(public modalController : ModalController) { }
+
+  async insert_modal(){
+    const modal = await this.modalController.create({
+      component : SkillInsertPage
+    });
+
+    modal.onDidDismiss()
+    .then((skill) =>{
+      console.log(skill);
+      console.log(Object.values(skill));
+      console.log(skill.data.skill_name);
+
+      var insert_skill = {
+        title: skill.data.skill_name,
+        grade: skill.data.skill_grade,
+        status: skill.data.skill_status
+      };
+
+      
+      this.skills.push(insert_skill);
+    })
+
+    return await modal.present();
+  }
 
   private skills = [
     {

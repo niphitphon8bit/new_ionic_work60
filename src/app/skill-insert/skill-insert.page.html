@@ -8,17 +8,17 @@
 </ion-header>
 
 <ion-content>
-  <form onsubmit="processForm(event)">
+  <form>
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
         <ion-label position="stacked">ชื่อทักษะ <ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-input required type="text"></ion-input>
+        <ion-input required type="text" [(ngModel)]="skill_name" name="skill_name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">เกรดที่ได้<ion-text color="danger">*</ion-text>
         </ion-label>
-        <ion-input required type="text"></ion-input>
+        <ion-input required type="text" [(ngModel)]="skill_grade" name="skill_grade"></ion-input>
       </ion-item>
     </ion-list>
     <div class="ion-padding">
