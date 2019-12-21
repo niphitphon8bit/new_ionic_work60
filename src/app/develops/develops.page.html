@@ -10,39 +10,19 @@
 <ion-content>
 
 
-  <ion-item-sliding>
+  <ion-item-sliding *ngFor="let develop of develops">
     <ion-item>
-      <ion-label>การบริหารการจัดการ</ion-label>
-      <ion-toggle checked color="success"></ion-toggle>
+      <ion-label>{{develop.Name }}</ion-label>
+      <ion-toggle checked color="success"[(ngModel)]="develop.Status"></ion-toggle>
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="danger" (click)="unread(item)"><ion-icon name="trash" ></ion-icon></ion-item-option>
+      <ion-item-option color="danger" (click)="remove(develop)"><ion-icon name="trash" ></ion-icon></ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <ion-item-sliding>
-  <ion-item>
-    <ion-label>วิชาการ</ion-label>
-    <ion-toggle  checked color="success"></ion-toggle>
-  </ion-item>
 
-  <ion-item-options side="end">
-    <ion-item-option color="danger" (click)="unread(item)"><ion-icon name="trash" ></ion-icon></ion-item-option>
-  </ion-item-options>
-</ion-item-sliding>
-
-<ion-item-sliding>
-<ion-item>
-  <ion-label>วิชาชีพเฉพาะสาขา</ion-label>
-  <ion-toggle  color="success"></ion-toggle>
-</ion-item>
-
-<ion-item-options side="end">
-  <ion-item-option color="danger" (click)="unread(item)"><ion-icon name="trash" ></ion-icon></ion-item-option>
-</ion-item-options>
-</ion-item-sliding>
-
+<!--  -->
 
   <ion-fab [routerLink]="['/develops-insert']" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
