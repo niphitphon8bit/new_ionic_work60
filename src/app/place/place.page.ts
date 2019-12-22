@@ -1,6 +1,6 @@
-import { Component, OnInit ,Input } from '@angular/core';
-import { ModalController } from '@ionic/angular';
 import { PlaceInsertPage } from '../place-insert/place-insert.page';
+import { ModalController } from '@ionic/angular';
+import { Component, OnInit ,Input } from '@angular/core';
 
 
 @Component({

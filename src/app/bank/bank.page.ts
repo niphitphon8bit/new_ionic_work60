@@ -107,6 +107,14 @@ export class BankPage implements OnInit {
     }
   }
 
+   // remove_bank on index 
+   remove_db_bank(bank) {
+    let index = this.db_banks.indexOf(bank);
+    if (index > -1) {
+      this.db_banks.splice(index, 1);
+    }
+  }
+
   // remove_bank on index 
   remove_bank(bank) {
     let index = this.banks.indexOf(bank);

@@ -1,3 +1,5 @@
+import { FoodInsertPage } from './food-insert/food-insert.page';
+import { PlaceInsertPage } from './place-insert/place-insert.page';
 import { BankInsertPage } from './bank-insert/bank-insert.page';
 import { Http, HttpModule} from '@angular/http'
 import { FormsModule } from '@angular/forms';
@@ -13,16 +15,17 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SkillInsertPage } from './skill-insert/skill-insert.page';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    SkillInsertPage,
-    BankInsertPage
+    BankInsertPage,
+    PlaceInsertPage,
+    FoodInsertPage
   ],
   entryComponents: [
-    SkillInsertPage,
-    BankInsertPage
+    BankInsertPage,
+    PlaceInsertPage,
+    FoodInsertPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpModule],
   providers: [
