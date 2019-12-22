@@ -9,7 +9,7 @@
 
 <ion-content>
   <form>
-    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-list>
       <ion-item>
         <ion-label position="floating">ชื่อ (ภาษาไทย) <ion-text color="danger">*</ion-text>
         </ion-label>
@@ -21,8 +21,6 @@
         <ion-input required type="text" [(ngModel)]="name_eng" name="name_eng"></ion-input>
       </ion-item>
     </ion-list>
-    <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin" (click)="insert_place()">บันทึก</ion-button>
-    </div>
+    <ion-button expand="block" type="submit" (click)="insert_place()">บันทึก</ion-button>
   </form>
 </ion-content>
