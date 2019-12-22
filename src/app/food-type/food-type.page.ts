@@ -22,12 +22,14 @@ export class FoodTypePage implements OnInit {
 
     modal.onDidDismiss()
       .then((food_type) => {
-        var insert_food_type = {
-          name_th: food_type.data.name_th,
-          name_en: food_type.data.name_en,
-          status: food_type.data.status
+        if (food_type.data.status) {
+          var insert_food_type = {
+            name_th: food_type.data.name_th,
+            name_en: food_type.data.name_en,
+            status: food_type.data.status
+          }
+          this.food_types.push(insert_food_type);
         }
-        this.food_types.push(insert_food_type);
       })
     return await modal.present();
   }

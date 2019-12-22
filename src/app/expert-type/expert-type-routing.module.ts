@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ExpertTypePage } from './expert-type.page';
+import { ExpertTypePage } from "./ExpertTypePage";
 
 const routes: Routes = [
   {

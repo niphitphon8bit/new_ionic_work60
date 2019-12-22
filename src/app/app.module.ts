@@ -1,3 +1,4 @@
+import { DevelopsInsertPage } from './develops-insert/develops-insert.page';
 import { FoodInsertPage } from './food-insert/food-insert.page';
 import { PlaceInsertPage } from './place-insert/place-insert.page';
 import { BankInsertPage } from './bank-insert/bank-insert.page';
@@ -22,16 +23,14 @@ import {ExpertTypeInsertPage} from './expert-type-insert/expert-type-insert.page
     BankInsertPage,
     PlaceInsertPage,
     FoodInsertPage,
-    ExpertTypeInsertPage
-    
-  ],
+	ExpertTypeInsertPage,
+	DevelopsInsertPage  ],
   entryComponents: [
     BankInsertPage,
     PlaceInsertPage,
     FoodInsertPage,
-    ExpertTypeInsertPage
-    
-  ],
+	ExpertTypeInsertPage,
+	DevelopsInsertPage  ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpModule],
   providers: [
     StatusBar,

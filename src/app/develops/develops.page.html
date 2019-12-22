@@ -8,12 +8,29 @@
 </ion-header>
 
 <ion-content>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_develop_modal()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
+  <ion-item-sliding *ngFor="let develop of db_develops">
+    <ion-item>
+      <ion-label>{{develop.dev_name_th}}</ion-label>
+      <ion-toggle color="success" [(ngModel)]="develop.status" (click)="change(develop)"></ion-toggle>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option (click)="remove_db_develop(develop)" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 
   <ion-item-sliding *ngFor="let develop of develops">
     <ion-item>
-      <ion-label>{{develop.Name }}</ion-label>
-      <ion-toggle checked color="success"[(ngModel)]="develop.Status"></ion-toggle>
+      <ion-label>{{develop.name_th}}</ion-label>
+      <ion-toggle checked color="success"[(ngModel)]="develop.status"></ion-toggle>
     </ion-item>
 
     <ion-item-options side="end">
@@ -24,11 +41,6 @@
 
 <!--  -->
 
-  <ion-fab [routerLink]="['/develops-insert']" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add" ></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 
 
 </ion-content>

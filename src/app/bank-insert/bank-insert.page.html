@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/basedata/bank" (click)="closeModal()"></ion-back-button>
     </ion-buttons>
     <ion-title>เพิ่มข้อมูลธนาคารที่เปิดบัญชี</ion-title>
   </ion-toolbar>
@@ -32,5 +32,5 @@
     </ion-item>
   </form>
   <br>
-  <ion-button expand="block" type="submit" color="success" (click)="insert_bank()">บันทึก</ion-button>
+  <ion-button expand="block" type="submit" (click)="insert_bank()">บันทึก</ion-button>
 </ion-content>

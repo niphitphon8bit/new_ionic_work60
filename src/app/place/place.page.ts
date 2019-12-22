@@ -16,25 +16,25 @@ export class PlacePage implements OnInit {
     public modalController: ModalController
   ) { }
 
-  async insert_modal() {
+  async insert_place_modal() {
     const modal = await this.modalController.create({
       component: PlaceInsertPage
     });
 
     modal.onDidDismiss()
       .then((place) => {
-        console.log(place);
-        console.log(Object.values(place));
-        console.log(place.data.name_eng);
+        if (place.data.status) {
+          console.log(place);
+          console.log(Object.values(place));
+          console.log(place.data.name_eng);
 
-        var insert_place = {
-          name_th: place.data.name_th,
-          name_eng: place.data.name_eng,
-          status: place.data.status
-        };
-
-
-        this.place.push(insert_place);
+          var insert_place = {
+            name_th: place.data.name_th,
+            name_eng: place.data.name_eng,
+            status: place.data.status
+          };
+          this.place.push(insert_place);
+        }
       })
 
     return await modal.present();

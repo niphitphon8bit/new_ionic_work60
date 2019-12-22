@@ -1,3 +1,4 @@
+import { NavParams, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 @Component({
@@ -7,8 +8,24 @@ import { Location } from '@angular/common';
 })
 export class ExpertTypeInsertPage implements OnInit {
 
-  constructor(private location: Location) { }
+  private  title: string;
+  private status: string;
 
+  constructor(
+    private location: Location,
+    private NavParams: NavParams,
+    private modalCtrl: ModalController
+    ) { 
+      this.title = "";
+      this.status= "true";
+    }
+
+    public closeModal(){
+      this.modalCtrl.dismiss({
+        'dismissed': true
+      });
+    }
+  
   ngOnInit() {
   }
   insert_expert_type(){

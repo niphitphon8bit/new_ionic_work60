@@ -25,13 +25,15 @@ export class BankPage implements OnInit {
 
     modal.onDidDismiss()
       .then((bank) => {
-        var insert_bank = {
-          balance_name: bank.data.balance_name,
-          name: bank.data.name,
-          text: bank.data.text,
-          status: bank.data.status
-        };
-        this.banks.push(insert_bank);
+        if(bank.data.status){
+          var insert_bank = {
+            balance_name: bank.data.balance_name,
+            name: bank.data.name,
+            text: bank.data.text,
+            status: bank.data.status
+          };
+          this.banks.push(insert_bank);  
+        }
       })
     return await modal.present();
   }
