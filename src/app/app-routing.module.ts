@@ -87,7 +87,11 @@ const routes: Routes = [
   {
     path: 'major-insert',
     loadChildren: () => import('./major-insert/major-insert.module').then(m => m.MajorInsertPageModule)
-  },];
+  },  {
+    path: 'place-insert',
+    loadChildren: () => import('./place-insert/place-insert.module').then( m => m.PlaceInsertPageModule)
+  },]
+;
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
