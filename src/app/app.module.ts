@@ -14,18 +14,23 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SkillInsertPage } from './skill-insert/skill-insert.page';
+import {ExpertTypeInsertPage} from './expert-type-insert/expert-type-insert.page';
 
 @NgModule({
   declarations: [
     AppComponent,
     BankInsertPage,
     PlaceInsertPage,
-    FoodInsertPage
+    FoodInsertPage,
+    ExpertTypeInsertPage
+    
   ],
   entryComponents: [
     BankInsertPage,
     PlaceInsertPage,
-    FoodInsertPage
+    FoodInsertPage,
+    ExpertTypeInsertPage
+    
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpModule],
   providers: [
