@@ -26,7 +26,7 @@ export class SkillInsertPage implements OnInit {
     public closeModal(){
       this.modalCtrl.dismiss({
         'dismissed': true
-      })
+      });
     }
 
   ngOnInit() {

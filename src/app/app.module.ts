@@ -1,3 +1,6 @@
+import { BankInsertPage } from './bank-insert/bank-insert.page';
+import { HTTP } from '@ionic-native/http/ngx';
+import { Http, HttpModule} from '@angular/http'
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,16 +14,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SkillInsertPage } from './skill-insert/skill-insert.page';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    SkillInsertPage
+    SkillInsertPage,
+    BankInsertPage
   ],
   entryComponents: [
-    SkillInsertPage
+    SkillInsertPage,
+    BankInsertPage
   ],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpModule],
   providers: [
+    HTTP,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
