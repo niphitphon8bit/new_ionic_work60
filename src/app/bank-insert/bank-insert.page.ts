@@ -33,7 +33,7 @@ export class BankInsertPage implements OnInit {
   ngOnInit() {
   }
 
-  bank(){
+  back(){
     this.location.back();
   }
 

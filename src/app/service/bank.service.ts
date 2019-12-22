@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HTTP } from '@ionic-native/http/ngx'
 import { Http } from '@angular/http'
 import 'rxjs/add/operator/map'
 @Injectable({

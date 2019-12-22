@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button ></ion-back-button>
+    </ion-buttons>
     <ion-title>food_insert</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,13 +10,15 @@
 <ion-content>
 
   <ion-item>
-    <ion-label>ชื่อ (ภาษาไทย)</ion-label>
-    <ion-input></ion-input>
+    <ion-label>ชื่อ (ภาษาไทย) <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input required type="text" [(ngModel)]="name_th" name="name_th"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>ชื่อ (ภาษาอังกฤษ)</ion-label>
-    <ion-input></ion-input>
+    <ion-label>ชื่อ (ภาษาอังกฤษ) <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input required type="text" [(ngModel)]="name_en" name="name_en"></ion-input>
   </ion-item>
-<br>
-  <ion-button expand="block"  color="success" >บันทึก</ion-button>
+  <br>
+  <ion-button expand="block" color="success" (click)="insert_food_type()">บันทึก</ion-button>
 </ion-content>
