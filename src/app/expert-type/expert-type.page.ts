@@ -18,7 +18,7 @@ export class ExpertTypePage implements OnInit {
 
     {
       title: 'วิทยากรพี่เลี้ยง',
-      status: 'true'
+      status: 'false'
     },
 
     {
@@ -28,11 +28,6 @@ export class ExpertTypePage implements OnInit {
 
     {
       title: 'วิทยากรพี่กลุ่ม',
-      status: 'false'
-    },
-
-    {
-      title: 'วิทยากรฝึกอบรม',
       status: 'false'
     }
   ];
