@@ -38,8 +38,7 @@ export class BankInsertPage implements OnInit {
   }
 
   insert_bank() {
-    // console.log
-    this, this.modalCtrl.dismiss({
+    this.modalCtrl.dismiss({
       'dismissed': true,
       'balance_name': this.balance_name,
       'name': this.name,

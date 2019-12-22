@@ -16,7 +16,7 @@ export class PlacePage implements OnInit {
     public modalController: ModalController
   ) { }
 
-  async insert_modal() {
+  async insert_place_modal() {
     const modal = await this.modalController.create({
       component: PlaceInsertPage
     });

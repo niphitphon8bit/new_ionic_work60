@@ -1,3 +1,4 @@
+import { DevelopsInsertPage } from './develops-insert/develops-insert.page';
 import { FoodInsertPage } from './food-insert/food-insert.page';
 import { PlaceInsertPage } from './place-insert/place-insert.page';
 import { BankInsertPage } from './bank-insert/bank-insert.page';
@@ -13,19 +14,20 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SkillInsertPage } from './skill-insert/skill-insert.page';
 
 @NgModule({
   declarations: [
     AppComponent,
     BankInsertPage,
     PlaceInsertPage,
-    FoodInsertPage
+    FoodInsertPage,
+    DevelopsInsertPage
   ],
   entryComponents: [
     BankInsertPage,
     PlaceInsertPage,
-    FoodInsertPage
+    FoodInsertPage,
+    DevelopsInsertPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpModule],
   providers: [
