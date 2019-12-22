@@ -1,5 +1,4 @@
 import { BankInsertPage } from './bank-insert/bank-insert.page';
-import { HTTP } from '@ionic-native/http/ngx';
 import { Http, HttpModule} from '@angular/http'
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -27,7 +26,6 @@ import { SkillInsertPage } from './skill-insert/skill-insert.page';
   ],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,FormsModule,HttpModule],
   providers: [
-    HTTP,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
