@@ -1,6 +1,6 @@
+import { NavParams, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-// import('loadChildren').then(m => m.MODULE).
 @Component({
   selector: 'app-major-insert',
   templateUrl: './major-insert.page.html',
@@ -8,13 +8,44 @@ import { Location } from '@angular/common';
 })
 export class MajorInsertPage implements OnInit {
 
-  constructor(private location: Location) { }
+  private name_th: string;
+  private name_en: string;
+  private dev_name: string;
+  private status: string;
+
+  constructor(
+    private location: Location,
+    private NavParams: NavParams,
+    private modalCtrl: ModalController
+  ) {
+    this.name_th = "";
+    this.name_en = "";
+    this.dev_name = "";
+    this.status = "true";
+  }
+
+  public closeModal() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
+  }
 
   ngOnInit() {
   }
-  major_insert(){
+
+  back() {
     this.location.back();
-    // loadChildren: () => import('./major/major.module').then(m => m.MajorPageModule)
   }
+
+  insert_major() {
+    this.modalCtrl.dismiss({
+      'dismissed': true,
+      'name_th': this.name_th,
+      'name_en': this.name_en,
+      'dev_name': this.dev_name,
+      'status': this.status
+    })
+  }
+
 }
 

@@ -8,31 +8,39 @@ import { Location } from '@angular/common';
 })
 export class ExpertTypeInsertPage implements OnInit {
 
-  private  title: string;
+  private name_th: string;
+  private name_en: string;
   private status: string;
 
   constructor(
     private location: Location,
     private NavParams: NavParams,
     private modalCtrl: ModalController
-    ) { 
-      this.title = "";
-      this.status= "true";
-    }
+  ) {
+    this.name_th = "";
+    this.name_en = "";
+    this.status = "true";
+  }
 
-    public closeModal(){
-      this.modalCtrl.dismiss({
-        'dismissed': true
-      });
-    }
-  
+  public closeModal() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
+  }
+
   ngOnInit() {
   }
-  insert_expert_type(){
+
+  back(){
     this.location.back();
   }
-  
- 
 
-
+  insert_expert_type() {
+    this.modalCtrl.dismiss({
+      'dismissed': true,
+      'name_th': this.name_th,
+      'name_en': this.name_en,
+      'status': this.status
+    })
+  }
 }

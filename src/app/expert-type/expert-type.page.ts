@@ -15,25 +15,29 @@ export class ExpertTypePage implements OnInit {
     private modalController: ModalController
     ) { }
     
-  public db_expert: any = null
-  private index_of_types = [
+  public db_expert_types: any = null;
+  private expert_types  = [
     {
-      title: 'วิทยากรบรรยาย',
+      name_th: 'วิทยากรบรรยาย',
+      name_en: 'Spoker',
       status: 'true'
     },
 
     {
-      title: 'วิทยากรพี่เลี้ยง',
+      name_th: 'วิทยากรพี่เลี้ยง',
+      name_en: 'Group',
       status: 'false'
     },
 
     {
-      title: 'วิทยากรสันทนาการ',
+      name_th: 'วิทยากรสันทนาการ',
+      name_en: 'Dancer',
       status: 'true'
     },
 
     {
-      title: 'วิทยากรพี่กลุ่ม',
+      name_th: 'วิทยากรพี่กลุ่ม',
+      name_en: 'Major Group',
       status: 'false'
     }
   ];
@@ -49,55 +53,58 @@ export class ExpertTypePage implements OnInit {
     .then((expert) => {
       if(expert.data.status){
         var insert_expert = {
-         
-          title: expert.data.text,
+          name_th: expert.data.name_th,
+          name_en: expert.data.name_en,
           status: expert.data.status
         };
-        this.index_of_types.push(insert_expert);  
+        this.expert_types.push(insert_expert);  
       }
     })
   return await modal.present();
 }
 
 set_expert_status() {
-  for (let key in this.db_expert) {
-    let value = this.db_expert[key]
-    if (this.db_expert[key].ept_status == "Y") {
-      this.db_expert[key].status = true;
+  for (let key in this.db_expert_types) {
+    let value = this.db_expert_types[key]
+    if (this.db_expert_types[key].ept_status == "Y") {
+      this.db_expert_types[key].status = true;
     } else {
-      this.db_expert[key].status = false;
+      this.db_expert_types[key].status = false;
     }
+    console.log(this.db_expert_types[key])
   }
 }
 
 get_all_expert() {
-  this.expertTypeService.get_all_expert_data().subscribe((res) => {
-    this.db_expert = res;
+  this.expertTypeService.get_all_expert_type_data().subscribe((res) => {
+    this.db_expert_types = res;
+    console.log(res);
+    console.log(this.db_expert_types)
     this.set_expert_status();
   })
-
+  console.log(this.db_expert_types)
 }
 
 change(expert) {
-  let index = this.db_expert.indexOf(expert);
-  if (this.db_expert[index].ept_status == "Y") {
-    this.db_expert[index].ept_status = "N"
+  let index = this.db_expert_types.indexOf(expert);
+  if (this.db_expert_types[index].ept_status == "Y") {
+    this.db_expert_types[index].ept_status = "N"
   } else {
-    this.db_expert[index].ept_status = "Y"
+    this.db_expert_types[index].ept_status = "Y"
   }
 }
 
-remove_db_expert(expert) {
-  let index = this.db_expert.indexOf(expert);
+remove_db_expert_types(expert) {
+  let index = this.db_expert_types.indexOf(expert);
   if (index > -1) {
-    this.db_expert.splice(index, 1);
+    this.db_expert_types.splice(index, 1);
   }
 }
 
-remove_expert_type(index_of_type){
-  let index = this.index_of_types.indexOf(index_of_type);
+remove_expert_type(expert){
+  let index = this.expert_types .indexOf(expert);
   if(index > -1){
-    this.index_of_types.splice(index,1);
+    this.expert_types .splice(index,1);
   }
 }
 

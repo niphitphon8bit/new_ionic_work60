@@ -55,6 +55,7 @@ export class MajorPage implements OnInit {
 
   ];
   ngOnInit() {
+    this.get_all_major();
   }
   /*
    * set_major_status
@@ -76,6 +77,7 @@ export class MajorPage implements OnInit {
   get_all_major() {
     this.MajorService.get_all_major_data().subscribe((res) => {
       this.db_majors = res;
+      console.log(this.db_majors)
       this.set_major_status();
     })
 
