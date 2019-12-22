@@ -18,7 +18,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let place of db_places">
       <ion-item>
-        <ion-label>{{place.place_name_en}}</ion-label>
+        <ion-label>{{place.place_name_th}}</ion-label>
         <ion-toggle color="success" [(ngModel)]="place.status" (click)="change(place)"></ion-toggle>
       </ion-item>
       <ion-item-options side="end">
@@ -30,7 +30,7 @@
 
     <ion-item-sliding *ngFor="let place of place">
       <ion-item>
-        <ion-label>{{place.name_eng}}</ion-label>
+        <ion-label>{{place.name_th}}</ion-label>
         <ion-toggle color="success" [(ngModel)]="place.status"></ion-toggle>
       </ion-item>
       <ion-item-options side="end">

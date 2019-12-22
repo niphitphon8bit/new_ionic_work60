@@ -17,7 +17,7 @@
 
   <ion-item-sliding *ngFor="let develop of db_develops">
     <ion-item>
-      <ion-label>{{develop.dev_name_en}}</ion-label>
+      <ion-label>{{develop.dev_name_th}}</ion-label>
       <ion-toggle color="success" [(ngModel)]="develop.status" (click)="change(develop)"></ion-toggle>
     </ion-item>
     <ion-item-options side="end">
@@ -29,7 +29,7 @@
 
   <ion-item-sliding *ngFor="let develop of develops">
     <ion-item>
-      <ion-label>{{develop.name_en}}</ion-label>
+      <ion-label>{{develop.name_th}}</ion-label>
       <ion-toggle checked color="success"[(ngModel)]="develop.status"></ion-toggle>
     </ion-item>
 

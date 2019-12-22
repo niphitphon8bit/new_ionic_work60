@@ -16,7 +16,7 @@
 
   <ion-item-sliding *ngFor="let food_type of db_food_types">
     <ion-item>
-      <ion-label>{{food_type.ft_name_en}}</ion-label>
+      <ion-label>{{food_type.ft_name_th}}</ion-label>
       <ion-toggle color="success" [(ngModel)]="food_type.status" (click)="change(food_type)"></ion-toggle>
     </ion-item>
     <ion-item-options side="end">
@@ -28,7 +28,7 @@
 
   <ion-item-sliding *ngFor="let food_type of food_types">
     <ion-item>
-      <ion-label>{{food_type.name_en}}</ion-label>
+      <ion-label>{{food_type.name_th}}</ion-label>
       <ion-toggle color="success" [(ngModel)]="food_type.status"></ion-toggle>
     </ion-item>
     <ion-item-options side="end">
