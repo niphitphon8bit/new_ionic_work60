@@ -19,10 +19,7 @@
       <ion-label>ชื่อธนาคาร <ion-text color="danger">*</ion-text>
       </ion-label>
       <ion-select interface="action-sheet" [(ngModel)]="name" name="name">
-        <ion-select-option value="ธนาคารกรุงเทพ">ธนาคารกรุงเทพ</ion-select-option>
-        <ion-select-option value="ธนาคารกสิกรไทย">ธนาคารกสิกรไทย</ion-select-option>
-        <ion-select-option value="ธนาคารกสิกรไทย">ธนาคารไทยพาณิชย์</ion-select-option>
-        <ion-select-option value="ธนาคารออมสิน">ธนาคารออมสิน</ion-select-option>
+        <ion-select-option *ngFor="let bank_base of db_bank_bases" value="{{bank_base.bb_id}}">{{bank_base.bb_name_th}}</ion-select-option>
       </ion-select>
     </ion-item>
 
