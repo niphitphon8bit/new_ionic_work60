@@ -21,9 +21,9 @@ export class ExpertInService {
         err => console.error(err)
       );
   }
-  upadate_expert_in_status(ep_id,ep_status) {
-    return this.http.(`https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_expert_in/update_status_expert_in/${ep_id}/${ep_status}`)
-  }
+  // upadate_expert_in_status(ep_id,ep_status) {
+  //   return this.http.(`https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_expert_in/update_status_expert_in/${ep_id}/${ep_status}`)
+  // }
 
 }
 

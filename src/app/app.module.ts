@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SkillInsertPage } from './skill-insert/skill-insert.page';
 import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.page';
-import { ExpertInInsertPage } from './expert-in-insert/expert-in-insert.page'
 
 @NgModule({
   declarations: [
@@ -28,10 +27,6 @@ import { ExpertInInsertPage } from './expert-in-insert/expert-in-insert.page'
     ExpertTypeInsertPage,
     DevelopsInsertPage,
     MajorInsertPage,
-<<<<<<< HEAD
-    ExpertInInsertPage
-=======
->>>>>>> 68a9b57c430b48f55fe1d5e471176bbdfe1f4d14
   ],
   entryComponents: [
     BankInsertPage,
@@ -39,8 +34,7 @@ import { ExpertInInsertPage } from './expert-in-insert/expert-in-insert.page'
     FoodInsertPage,
     ExpertTypeInsertPage,
     DevelopsInsertPage,
-    MajorInsertPage,
-    ExpertInInsertPage
+    MajorInsertPage
   ],
   imports: [
     BrowserModule,
