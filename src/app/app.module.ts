@@ -1,3 +1,4 @@
+import { ExpertInInsertPage } from './expert-in-insert/expert-in-insert.page';
 import { HttpClientModule } from '@angular/common/http';
 import { MajorInsertPage } from './major-insert/major-insert.page';
 import { DevelopsInsertPage } from './develops-insert/develops-insert.page';
@@ -27,6 +28,7 @@ import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.pa
     ExpertTypeInsertPage,
     DevelopsInsertPage,
     MajorInsertPage,
+    ExpertInInsertPage
   ],
   entryComponents: [
     BankInsertPage,
@@ -34,7 +36,8 @@ import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.pa
     FoodInsertPage,
     ExpertTypeInsertPage,
     DevelopsInsertPage,
-    MajorInsertPage
+    MajorInsertPage,
+    ExpertInInsertPage
   ],
   imports: [
     BrowserModule,
