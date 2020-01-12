@@ -32,7 +32,6 @@ export class BankPage implements OnInit {
             text: bank.data.text,
             status: bank.data.status
           };
-          // this.BankService.bank_insert(insert_bank);
           this.banks.push(insert_bank);  
         }
       })
@@ -95,7 +94,6 @@ export class BankPage implements OnInit {
   get_all_bank() {
     this.BankService.get_all_bank_data().subscribe((res) => {
       this.db_banks = res;
-      console.log(this.db_banks);
       this.set_bank_status();
     })
 
@@ -114,11 +112,9 @@ export class BankPage implements OnInit {
    // remove_bank on index 
    remove_db_bank(bank) {
     let index = this.db_banks.indexOf(bank);
-    console.log(bank.ba_id);
     if (index > -1) {
       this.db_banks.splice(index, 1);
     }
-    this.BankService.bank_delete(bank.ba_id);
   }
 
   // remove_bank on index 
