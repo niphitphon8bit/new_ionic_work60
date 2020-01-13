@@ -30,9 +30,10 @@ export class BankPage implements OnInit {
             balance_name: bank.data.balance_name,
             name: bank.data.name,
             text: bank.data.text,
-            status: bank.data.status
+            status: bank.data.status == "true"  ? "Y": "N"
           };
-          // this.BankService.bank_insert(insert_bank);
+          this.BankService.bank_insert(insert_bank);
+          console.log(bank.data.status);
           this.banks.push(insert_bank);  
         }
       })

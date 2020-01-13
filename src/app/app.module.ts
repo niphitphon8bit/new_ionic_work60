@@ -1,3 +1,5 @@
+import { ExpertInInsertPage } from './expert-in-insert/expert-in-insert.page';
+import { HttpClientModule } from '@angular/common/http';
 import { MajorInsertPage } from './major-insert/major-insert.page';
 import { DevelopsInsertPage } from './develops-insert/develops-insert.page';
 import { FoodInsertPage } from './food-insert/food-insert.page';
@@ -8,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -26,7 +27,8 @@ import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.pa
     FoodInsertPage,
     ExpertTypeInsertPage,
     DevelopsInsertPage,
-    MajorInsertPage
+    MajorInsertPage,
+    ExpertInInsertPage
   ],
   entryComponents: [
     BankInsertPage,
@@ -34,14 +36,16 @@ import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.pa
     FoodInsertPage,
     ExpertTypeInsertPage,
     DevelopsInsertPage,
-    MajorInsertPage
+    MajorInsertPage,
+    ExpertInInsertPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
