@@ -29,4 +29,19 @@ export class FoodTypeService {
   delete_food_type_data(ft_id:string){
     return this.http.delete(this.url + "/foodtype/" + ft_id).map((res) => res.json());
   }
+
+  update_food_type_status(ft_id:string,ft_status:boolean){
+    let data = {
+      "ft_status": (ft_status == false ? "N" : "Y")
+    }
+    return this.http.put(this.url + "/foodtype/" + ft_id,data).map((res) => res.json());
+  }
+
+  update_food_type_data(ft_id:string,ft_name_th:string,ft_name_en:string){
+    let data = {
+      "ft_name_th": ft_name_th,
+      "ft_name_en": ft_name_en
+    }
+    return this.http.put(this.url + "/foodtype/update/" + ft_id,data).map((res) => res.json());
+  }
 }
