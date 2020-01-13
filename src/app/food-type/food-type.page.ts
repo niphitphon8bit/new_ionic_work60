@@ -1,5 +1,5 @@
 import { FoodInsertPage } from './../food-insert/food-insert.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { FoodTypeService } from './../service/food-type.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,99 +10,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodTypePage implements OnInit {
 
+  public food_types: any = null;
+
   constructor(
     private foodTypeService: FoodTypeService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private alertController: AlertController
   ) { }
-
-  async insert_food_type_modal() {
-    const modal = await this.modalController.create({
-      component: FoodInsertPage
-    })
-
-    modal.onDidDismiss()
-      .then((food_type) => {
-        if (food_type.data.status) {
-          var insert_food_type = {
-            name_th: food_type.data.name_th,
-            name_en: food_type.data.name_en,
-            status: food_type.data.status
-          }
-          this.food_types.push(insert_food_type);
-        }
-      })
-    return await modal.present();
-  }
-
-  //db_food_type query from database
-  public db_food_types: any = null;
-
-  private food_types = [
-    {
-      name_th: "ไม่กินผัก",
-      name_en: 'No Vegetable',
-      status: 'true',
-    },
-    {
-      name_th: 'กินคลีน',
-      name_en: 'Clean food',
-      status: 'false',
-    }
-  ];
-
+  
   ngOnInit() {
     this.get_all_food_type();
   }
 
-  /*
-  * set_food_type_status
-  * set_food_type_status from database y to true n to false by add new data 
-  * create Niphitphon 12/22/2562
-  */
-  set_food_type_status() {
-    for (let key in this.db_food_types) {
-      let value = this.db_food_types[key]
-      if (this.db_food_types[key].ft_status == "Y") {
-        this.db_food_types[key].status = true;
-      } else {
-        this.db_food_types[key].status = false;
-      }
-    }
-  }
-  // get all food_type from database
   get_all_food_type() {
     this.foodTypeService.get_all_food_type_data().subscribe((res) => {
-      this.db_food_types = res;
-      console.log(this.db_food_types);
-      this.set_food_type_status();
+      this.food_types = res;
     })
-
   }
 
-  // change food_type status , ba_status
-  change(food_type) {
-    let index = this.db_food_types.indexOf(food_type);
-    if (this.db_food_types[index].ba_status == "Y") {
-      this.db_food_types[index].ba_status = "N"
-    } else {
-      this.db_food_types[index].ba_status = "Y"
-    }
+  async insert_food_type(){
+    const modal = await this.modalController.create({
+      component: FoodInsertPage
+    });
+
+    modal.onDidDismiss().then((status) => {
+      if(status != null){
+        this.get_all_food_type()
+      }
+    });
+    return await modal.present()
   }
 
-  // remove_food_type on index 
-  remove_db_food_type(food_type) {
-    let index = this.db_food_types.indexOf(food_type);
-    if (index > -1) {
-      this.db_food_types.splice(index, 1);
-    }
+  async remove_food_type(foodtype){
+    const alert = await this.alertController.create({
+      header: "ยืนยันการลบรายการ",
+      message: "ต้องการลบรายการนี้หรือไม่ ?",
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: (event) => {
+            
+          }
+        },
+        {
+          text: 'ตกลง',
+          handler: (event) => {
+            this.foodTypeService.delete_food_type_data(foodtype.ft_id).subscribe((res) => {
+              if(res.affectedRows > 0){
+                this.get_all_food_type()
+              }
+            })
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
-  // remove_food_type on index 
-  remove_food_type(food_type) {
-    let index = this.food_types.indexOf(food_type);
-    if (index > -1) {
-      this.food_types.splice(index, 1);
-    }
+  change_status_food_type(foodtype){
+    console.log(foodtype)
   }
-
 }
