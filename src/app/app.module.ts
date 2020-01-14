@@ -41,7 +41,7 @@ import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.pa
     MajorUpdatePage,
     ExpertInUpdatePage,
     ExpertOutInsertPage,
-    ExpertOutUpdatePage
+    ExpertOutUpdatePage,
     FoodUpdatePage,
     ExpertTypeUpdatePage
   ],
@@ -59,7 +59,7 @@ import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.pa
     MajorUpdatePage,
     ExpertInUpdatePage,
     ExpertOutInsertPage,
-    ExpertOutUpdatePage
+    ExpertOutUpdatePage,
     FoodUpdatePage,
     ExpertTypeUpdatePage
   ],
