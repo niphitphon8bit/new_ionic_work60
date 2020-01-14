@@ -76,10 +76,6 @@ const routes: Routes = [
     loadChildren: () => import('./develops-insert/develops-insert.module').then(m => m.DevelopsInsertPageModule)
   },
   {
-    path: 'basedata/skill',
-    loadChildren: () => import('./skill/skill.module').then(m => m.SkillPageModule)
-  },
-  {
     path: 'basedata/skill/skill-insert',
     loadChildren: () => import('./skill-insert/skill-insert.module').then(m => m.SkillInsertPageModule)
   },
