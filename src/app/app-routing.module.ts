@@ -76,6 +76,7 @@ const routes: Routes = [
     loadChildren: () => import('./develops-insert/develops-insert.module').then(m => m.DevelopsInsertPageModule)
   },
   {
+<<<<<<< HEAD
     path: 'basedata/skill',
     loadChildren: () => import('./skill/skill.module').then(m => m.SkillPageModule)
   },
@@ -100,6 +101,49 @@ const routes: Routes = [
   },
 ]
 ;
+=======
+    path: 'basedata/skill/skill-insert',
+    loadChildren: () => import('./skill-insert/skill-insert.module').then(m => m.SkillInsertPageModule)
+  },
+  {
+    path: 'major-insert',
+    loadChildren: () => import('./major-insert/major-insert.module').then(m => m.MajorInsertPageModule)
+  },
+  {
+    path: 'place-insert',
+    loadChildren: () => import('./place-insert/place-insert.module').then(m => m.PlaceInsertPageModule)
+  },
+  {
+    path: 'food-update',
+    loadChildren: () => import('./food-update/food-update.module').then(m => m.FoodUpdatePageModule)
+  },
+  {
+    path: 'major-update',
+    loadChildren: () => import('./major-update/major-update.module').then(m => m.MajorUpdatePageModule)
+  },
+  {
+    path: 'place-update',
+    loadChildren: () => import('./place-update/place-update.module').then(m => m.PlaceUpdatePageModule)
+  },
+  {
+    path: 'expert-in-update',
+    loadChildren: () => import('./expert-in-update/expert-in-update.module').then(m => m.ExpertInUpdatePageModule)
+  }, {
+    path: 'bank-update',
+    loadChildren: () => import('./bank-update/bank-update.module').then(m => m.BankUpdatePageModule)
+  },
+  {
+    path: 'expert-out-update',
+    loadChildren: () => import('./expert-out-update/expert-out-update.module').then(m => m.ExpertOutUpdatePageModule)
+  },
+  {
+    path: 'expert-type-update',
+    loadChildren: () => import('./expert-type-update/expert-type-update.module').then( m => m.ExpertTypeUpdatePageModule)
+  },
+
+]
+  ;
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

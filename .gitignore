@@ -29,3 +29,7 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+<<<<<<< HEAD
+=======
+/src/app/skill
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b

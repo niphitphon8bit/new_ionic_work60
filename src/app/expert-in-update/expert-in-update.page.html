@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/expert/expert-in" (click)="closeModal()"></ion-back-button>
+        </ion-buttons>
+        <ion-title>expert_in_edit</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-item>
+        <ion-label position="floating">First Name
+            <font color="danger">*</font>
+        </ion-label>
+        <ion-input [(ngModel)]="ep_fname" name="ep_fname"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating"> Last Name
+            <font color="danger">*</font>
+        </ion-label>
+        <ion-input [(ngModel)]="ep_lname" name="ep_lname"></ion-input>
+    </ion-item>
+
+
+    <div class="ion-padding">
+        <ion-button expand="block" (click)="update_expert_in()">บันทึก</ion-button>
+    </div>
+
+
+</ion-content>

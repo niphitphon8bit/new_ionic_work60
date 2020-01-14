@@ -1,13 +1,18 @@
 <ion-header>
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
+<<<<<<< HEAD
       <ion-back-button defaultHref="/"></ion-back-button>
+=======
+      <ion-back-button defaultHref="/expert/expert-out" (click)="closeModal()"></ion-back-button>
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
     </ion-buttons>
     <ion-title>expert_out_insert</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
+<<<<<<< HEAD
     <form onsubmit="processForm(event)">
         <ion-list lines="full" class="ion-no-margin ion-no-padding">
           <ion-item>
@@ -24,4 +29,20 @@
         </div>
         </ion-list>
       </form>
+=======
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">ชื่อ<ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="fname" name="ep_fname"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">นามสกุล<ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" [(ngModel)]="lname" name="ep_lname"></ion-input>
+          </ion-item>
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin" (click)="expert_out_insert()">เพิ่มวิทยากร</ion-button>
+        </div>
+        </ion-list>
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 </ion-content>

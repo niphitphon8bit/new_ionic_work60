@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { DevelopService } from './../service/develop.service';
 
+=======
+import { NavParams, ModalController } from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @Component({
   selector: 'app-develops-insert',
   templateUrl: './develops-insert.page.html',
@@ -17,9 +23,13 @@ export class DevelopsInsertPage implements OnInit {
   constructor(
     private location: Location,
     private NavParams: NavParams,
+<<<<<<< HEAD
     private modalCtrl: ModalController,
     private DevelopService: DevelopService,
     private alertController: AlertController
+=======
+    private modalCtrl: ModalController
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   ) {
     this.name_th = "";
     this.name_en = "";
@@ -27,7 +37,13 @@ export class DevelopsInsertPage implements OnInit {
   }
 
   public closeModal() {
+<<<<<<< HEAD
     this.modalCtrl.dismiss("close");
+=======
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   }
 
   ngOnInit() {
@@ -37,6 +53,7 @@ export class DevelopsInsertPage implements OnInit {
     this.location.back();
   }
 
+<<<<<<< HEAD
   insert_develops() {
     this.DevelopService.insert_develops_data(this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
@@ -64,5 +81,16 @@ export class DevelopsInsertPage implements OnInit {
 
     await alert.present();
   }
+=======
+  insert_develop() {
+    this.modalCtrl.dismiss({
+      'dismissed': true,
+      'name_th': this.name_th,
+      'name_en': this.name_en,
+      'status': this.status
+    })
+  }
+
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
 }
