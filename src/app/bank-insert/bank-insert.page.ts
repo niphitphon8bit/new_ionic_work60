@@ -19,7 +19,7 @@ export class BankInsertPage implements OnInit {
     private location: Location,
     private NavParams: NavParams,
     private modalCtrl: ModalController,
-    private BankInsertPage: BankInsertService
+    private BankInsertService: BankInsertService
   ) {
     this.balance_name = "";
     this.name = "";
@@ -44,7 +44,7 @@ export class BankInsertPage implements OnInit {
   }
 
   get_all_bank_base() {
-    this.BankInsertPage.get_all_bank_base_data().subscribe((res) => {
+    this.BankInsertService.get_all_bank_base_data().subscribe((res) => {
       this.db_bank_bases = res;
       console.log(this.db_bank_bases);
       // this.set_bank_status();

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/basedata/bank" (click)="closeModal()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>แก้ไขข้อมูลธนาคารที่เปิดบัญชี</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label>ชื่อบัญชี <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="balance_name" name="balance_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ชื่อธนาคาร <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-select [(ngModel)]="name" name="name">
+        <!-- interface="action-sheet" -->
+        <!-- [value]="bank_base.bb_id" [selected]="ba_bb_id == bank_base.bb_id" -->
+        <!-- </ion-select-option *ngIf="ba_bb_id == "></ion-select-option> -->
+        <ion-select-option *ngFor="let bank_base of db_bank_bases" value={{bank_base.bb_id}}>{{bank_base.bb_name_th}}
+        </ion-select-option>
+
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>หมายเหตุ</ion-label>
+      <ion-textarea [(ngModel)]="text" name="text"></ion-textarea>
+    </ion-item>
+  </form>
+  <br>
+  <ion-button expand="block" type="submit" (click)="update_bank()">บันทึก</ion-button>
+</ion-content>

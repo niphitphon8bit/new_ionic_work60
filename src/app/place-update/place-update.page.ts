@@ -1,42 +1,27 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from "@angular/common";
-import { ExpertOutService } from './../service/expert-out.service';
+import { PlaceService } from '../service/place.service';
 
 @Component({
-  selector: 'app-expert-out-insert',
-  templateUrl: './expert-out-insert.page.html',
-  styleUrls: ['./expert-out-insert.page.scss'],
+  selector: 'app-place-update',
+  templateUrl: './place-update.page.html',
+  styleUrls: ['./place-update.page.scss'],
 })
-export class ExpertOutInsertPage implements OnInit {
+export class PlaceUpdatePage implements OnInit {
 
-  private fname: string;
-  private lname: string;
-  private status: string;
-
-  constructor(private location: Location,
-    private NavParams: NavParams,
+  @Input() name_th: string;
+  @Input() name_en: string;
+  @Input() place_id: string;
+  constructor(
     private modalCtrl: ModalController,
-    private ExpertOutService: ExpertOutService,
-    private alertController: AlertController) { 
-
-      this.fname = "";
-      this.lname = "";
-      this.status = "true";
-    }
+    private PlaceService: PlaceService,
+    private alertController: AlertController) {}
 
   ngOnInit() {
   }
 
-  public closeModal() {
-    this.modalCtrl.dismiss("close");
-  }
-
-  back() {
-    this.location.back();
-  }
-  expert_out_insert() {
-    this.ExpertOutService.insert_expert_out_data(this.fname,this.lname).subscribe((res) => {
+  update_place() {
+    this.PlaceService.update_place_data(this.place_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
       }else{
@@ -61,6 +46,10 @@ export class ExpertOutInsertPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  closeModal() {
+    this.modalCtrl.dismiss("close");
   }
 
 }

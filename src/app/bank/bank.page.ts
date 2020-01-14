@@ -1,7 +1,8 @@
 import { BankInsertPage } from './../bank-insert/bank-insert.page';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { BankService } from './../service/bank.service';
 import { Component, OnInit } from '@angular/core';
+import { BankUpdatePage } from '../bank-update/bank-update.page';
 
 @Component({
   selector: 'app-bank',
@@ -13,10 +14,10 @@ export class BankPage implements OnInit {
 
   constructor(
     private BankService: BankService,
-    private modalController: ModalController
-  ) {
+    private modalController: ModalController,
+    private alertController: AlertController
+  ) { }
 
-  }
 
   async insert_bank_modal() {
     const modal = await this.modalController.create({
@@ -25,52 +26,22 @@ export class BankPage implements OnInit {
 
     modal.onDidDismiss()
       .then((bank) => {
-        if(bank.data.status){
+        if (bank.data.status) {
           var insert_bank = {
             balance_name: bank.data.balance_name,
             name: bank.data.name,
             text: bank.data.text,
-            status: bank.data.status == "true"  ? "Y": "N"
+            status: bank.data.status == "true" ? "Y" : "N"
           };
           this.BankService.bank_insert(insert_bank);
           console.log(bank.data.status);
-          this.banks.push(insert_bank);  
+          this.get_all_bank()
         }
       })
     return await modal.present();
   }
   // db_bank query from database
-  public db_banks: any = null;
-
-  // banks data mock-up
-  private banks = [
-    {
-      balance_name: "บัญชีฝาก",
-      name: 'Kasikorn',
-      text: '',
-      status: 'true',
-    },
-    {
-      balance_name: "บัญชีถอน",
-      name: 'Thai Army',
-      text: '',
-      status: 'true',
-    },
-    {
-      balance_name: "บัญชีฝาก",
-      name: 'Krungthai',
-      text: '',
-      status: 'false',
-    },
-    {
-      balance_name: 'บัญชีถอน',
-      name: 'Bangkok Bank',
-      text: '',
-      status: 'false',
-    }
-  ];
-
-
+  public db_banks: any = [];
 
   ngOnInit() {
     this.get_all_bank();
@@ -94,10 +65,19 @@ export class BankPage implements OnInit {
 
   // get all bank from database
   get_all_bank() {
+    this.db_banks = []
     this.BankService.get_all_bank_data().subscribe((res) => {
-      this.db_banks = res;
+      res.forEach(element => {
+        this.db_banks.push({
+          ba_id: element.ba_id,
+          ba_balance_name: element.ba_balance_name,
+          ba_bb_id: element.ba_bb_id,
+          ba_status: (element.ba_status == "Y" ? true : false),
+          ba_text: element.ba_text
+        })
+      })
       console.log(this.db_banks);
-      this.set_bank_status();
+      // this.set_bank_status();
     })
 
   }
@@ -112,8 +92,8 @@ export class BankPage implements OnInit {
     }
   }
 
-   // remove_bank on index 
-   remove_db_bank(bank) {
+  // remove_bank on index 
+  remove_db_bank(bank) {
     let index = this.db_banks.indexOf(bank);
     console.log(bank.ba_id);
     if (index > -1) {
@@ -122,12 +102,54 @@ export class BankPage implements OnInit {
     this.BankService.bank_delete(bank.ba_id);
   }
 
-  // remove_bank on index 
-  remove_bank(bank) {
-    let index = this.banks.indexOf(bank);
-    if (index > -1) {
-      this.banks.splice(index, 1);
-    }
+
+
+
+  async edit_bank(bank) {
+    console.log(bank)
+    const modal = await this.modalController.create({
+      component: BankUpdatePage,
+      componentProps: {
+        'dismissed': true,
+        'balance_name': bank.ba_balance_name,
+        'name': bank.ba_bb_id,
+        'status': bank.ba_status,
+        'text': bank.ba_text,
+        'ba_id': bank.ba_id
+      }
+    });
+
+    modal.onDidDismiss().then((status) => {
+        this.get_all_bank()
+    });
+    return await modal.present()
+  }
+
+  async change_status_bank(bank) {
+    const alert = await this.alertController.create({
+      header: "ยืนยันการปรับสถานะรายการ",
+      message: "ต้องการปรับสถานะรายการนี้หรือไม่ ?",
+      buttons: [
+        {
+          text: 'ยกเลิก',
+          handler: (event) => {
+
+          }
+        },
+        {
+          text: 'ตกลง',
+          handler: (event) => {
+            this.BankService.update_bank_status(bank.ba_id, bank.ba_status).subscribe((res) => {
+              if (res.affectedRows > 0) {
+                this.get_all_bank()
+              }
+            })
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

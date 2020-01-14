@@ -1,42 +1,27 @@
+import { Component, OnInit,Input } from '@angular/core';
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from "@angular/common";
-import { ExpertOutService } from './../service/expert-out.service';
+import {ExpertInService} from '../service/expert-in.service'
+
 
 @Component({
-  selector: 'app-expert-out-insert',
-  templateUrl: './expert-out-insert.page.html',
-  styleUrls: ['./expert-out-insert.page.scss'],
+  selector: 'app-expert-in-update',
+  templateUrl: './expert-in-update.page.html',
+  styleUrls: ['./expert-in-update.page.scss'],
 })
-export class ExpertOutInsertPage implements OnInit {
-
-  private fname: string;
-  private lname: string;
-  private status: string;
-
-  constructor(private location: Location,
-    private NavParams: NavParams,
+export class ExpertInUpdatePage implements OnInit {
+  @Input() ep_id: string;
+  @Input() ep_fname: string;
+  @Input() ep_lname: string;
+  constructor(
     private modalCtrl: ModalController,
-    private ExpertOutService: ExpertOutService,
-    private alertController: AlertController) { 
-
-      this.fname = "";
-      this.lname = "";
-      this.status = "true";
-    }
+    private expertInService: ExpertInService,
+    private alertController: AlertController) {}
 
   ngOnInit() {
   }
 
-  public closeModal() {
-    this.modalCtrl.dismiss("close");
-  }
-
-  back() {
-    this.location.back();
-  }
-  expert_out_insert() {
-    this.ExpertOutService.insert_expert_out_data(this.fname,this.lname).subscribe((res) => {
+  update_expert_in() {
+    this.expertInService.update_expert_in_data(this.ep_id,this.ep_fname,this.ep_lname).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
       }else{
@@ -45,7 +30,6 @@ export class ExpertOutInsertPage implements OnInit {
     })
     
   }
-
   async presentAlert(title:string,description:string) {
     const alert = await this.alertController.create({
       header: title,
@@ -62,5 +46,7 @@ export class ExpertOutInsertPage implements OnInit {
 
     await alert.present();
   }
-
+  closeModal() {
+    this.modalCtrl.dismiss("close");
+  }
 }

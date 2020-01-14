@@ -76,23 +76,39 @@ const routes: Routes = [
     loadChildren: () => import('./develops-insert/develops-insert.module').then(m => m.DevelopsInsertPageModule)
   },
   {
-    path: 'basedata/skill',
-    loadChildren: () => import('./skill/skill.module').then(m => m.SkillPageModule)
-  },
-  {
     path: 'basedata/skill/skill-insert',
     loadChildren: () => import('./skill-insert/skill-insert.module').then(m => m.SkillInsertPageModule)
   },
-
   {
     path: 'major-insert',
     loadChildren: () => import('./major-insert/major-insert.module').then(m => m.MajorInsertPageModule)
-  },  {
+  },
+  {
     path: 'place-insert',
-    loadChildren: () => import('./place-insert/place-insert.module').then( m => m.PlaceInsertPageModule)
-  } , {
+    loadChildren: () => import('./place-insert/place-insert.module').then(m => m.PlaceInsertPageModule)
+  },
+  {
     path: 'food-update',
-    loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
+    loadChildren: () => import('./food-update/food-update.module').then(m => m.FoodUpdatePageModule)
+  },
+  {
+    path: 'major-update',
+    loadChildren: () => import('./major-update/major-update.module').then(m => m.MajorUpdatePageModule)
+  },
+  {
+    path: 'place-update',
+    loadChildren: () => import('./place-update/place-update.module').then(m => m.PlaceUpdatePageModule)
+  },
+  {
+    path: 'expert-in-update',
+    loadChildren: () => import('./expert-in-update/expert-in-update.module').then(m => m.ExpertInUpdatePageModule)
+  }, {
+    path: 'bank-update',
+    loadChildren: () => import('./bank-update/bank-update.module').then(m => m.BankUpdatePageModule)
+  },
+  {
+    path: 'expert-out-update',
+    loadChildren: () => import('./expert-out-update/expert-out-update.module').then(m => m.ExpertOutUpdatePageModule)
   },
   {
     path: 'expert-type-update',
@@ -100,7 +116,7 @@ const routes: Routes = [
   },
 
 ]
-;
+  ;
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
