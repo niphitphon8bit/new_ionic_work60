@@ -1,54 +1,46 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
       <ion-buttons slot="start">
           <ion-back-button defaultHref="/"></ion-back-button>
         </ion-buttons>
-    <ion-title>ด้านการพัฒนา</ion-title>
+    <ion-title>Develops</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_develop_modal()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-
-  <ion-item-sliding>
+  <ion-item-sliding *ngFor="let develop of db_develops">
     <ion-item>
-      <ion-label>การบริหารการจัดการ</ion-label>
-      <ion-toggle checked color="success"></ion-toggle>
+      <ion-label>{{develop.dev_name_th}}</ion-label>
+      <ion-toggle color="success" [(ngModel)]="develop.status" (click)="change(develop)"></ion-toggle>
     </ion-item>
-
     <ion-item-options side="end">
-      <ion-item-option color="danger" (click)="unread(item)"><ion-icon name="trash" ></ion-icon></ion-item-option>
+      <ion-item-option (click)="remove_db_develop(develop)" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
-  <ion-item-sliding>
-  <ion-item>
-    <ion-label>วิชาการ</ion-label>
-    <ion-toggle  checked color="success"></ion-toggle>
-  </ion-item>
+  <ion-item-sliding *ngFor="let develop of develops">
+    <ion-item>
+      <ion-label>{{develop.name_th}}</ion-label>
+      <ion-toggle checked color="success"[(ngModel)]="develop.status"></ion-toggle>
+    </ion-item>
 
-  <ion-item-options side="end">
-    <ion-item-option color="danger" (click)="unread(item)"><ion-icon name="trash" ></ion-icon></ion-item-option>
-  </ion-item-options>
-</ion-item-sliding>
-
-<ion-item-sliding>
-<ion-item>
-  <ion-label>วิชาชีพเฉพาะสาขา</ion-label>
-  <ion-toggle  color="success"></ion-toggle>
-</ion-item>
-
-<ion-item-options side="end">
-  <ion-item-option color="danger" (click)="unread(item)"><ion-icon name="trash" ></ion-icon></ion-item-option>
-</ion-item-options>
-</ion-item-sliding>
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="remove(develop)"><ion-icon name="trash" ></ion-icon></ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 
 
-  <ion-fab [routerLink]="['/develops-insert']" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add" ></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<!--  -->
+
 
 
 </ion-content>

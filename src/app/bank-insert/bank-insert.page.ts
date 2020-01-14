@@ -1,5 +1,7 @@
+import { NavParams, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
+import { BankInsertService } from './../service/bank-insert.service';
 
 @Component({
   selector: 'app-bank-insert',
@@ -8,14 +10,56 @@ import { Location } from "@angular/common";
 })
 export class BankInsertPage implements OnInit {
 
-  constructor(private location: Location) { }
+  private name: string;
+  private balance_name: string;
+  private text: string;
+  private status: string;
 
-  ngOnInit() {
+  constructor(
+    private location: Location,
+    private NavParams: NavParams,
+    private modalCtrl: ModalController,
+    private BankInsertService: BankInsertService
+  ) {
+    this.balance_name = "";
+    this.name = "";
+    this.text = "";
+    this.status = "true";
   }
 
-  insert_bank(){
-  
+  public db_bank_bases: any = null;
+
+  public closeModal() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
+  }
+
+  ngOnInit() {
+    this.get_all_bank_base();
+  }
+
+  back() {
     this.location.back();
+  }
+
+  get_all_bank_base() {
+    this.BankInsertService.get_all_bank_base_data().subscribe((res) => {
+      this.db_bank_bases = res;
+      console.log(this.db_bank_bases);
+      // this.set_bank_status();
+    })
+  }
+
+
+  insert_bank() {
+    this.modalCtrl.dismiss({
+      'dismissed': true,
+      'balance_name': this.balance_name,
+      'name': this.name,
+      'status': this.status,
+      'text': this.text,
+    })
   }
 
 }

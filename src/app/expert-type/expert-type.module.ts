@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ExpertTypePageRoutingModule } from './expert-type-routing.module';
 
-import { ExpertTypePage } from './expert-type.page';
+import { ExpertTypePage } from "./expert-type.page";
 
 @NgModule({
   imports: [

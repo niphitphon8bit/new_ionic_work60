@@ -1,30 +1,36 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>บัญชีธนาคาร</ion-title>
+    <ion-title>ประเภทธนาคารที่เปิดบัญชี</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/basedata/bank/bank-insert']">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_bank_modal()">
     <ion-fab-button>
-      <ion-icon name="add" ></ion-icon>
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let bank of banks">
+    <ion-item-sliding *ngFor="let bank of db_banks">
       <ion-item>
-        <ion-label>{{bank.name}}</ion-label>
-        <ion-toggle color="success" [(ngModel)]="bank.status"></ion-toggle>
+        <ion-label>{{bank.ba_balance_name}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="bank.ba_status" (click)="change_status_bank(bank)"></ion-toggle>
       </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="remove_bank(bank)" color="danger">
+      <ion-item-options side="end"> 
+          <ion-item-option (click)="edit_bank(bank)" color="warning">
+          <ion-icon name="create"></ion-icon>
+        </ion-item-option>
+        <ion-item-option (click)="remove_db_bank(bank)" color="danger">
           <ion-icon name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
+
+    
+
   </ion-list>
 </ion-content>

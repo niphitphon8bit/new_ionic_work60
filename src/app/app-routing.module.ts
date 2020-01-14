@@ -87,7 +87,19 @@ const routes: Routes = [
   {
     path: 'major-insert',
     loadChildren: () => import('./major-insert/major-insert.module').then(m => m.MajorInsertPageModule)
-  },];
+  },  {
+    path: 'place-insert',
+    loadChildren: () => import('./place-insert/place-insert.module').then( m => m.PlaceInsertPageModule)
+  } , {
+    path: 'food-update',
+    loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
+  },  {
+    path: 'bank-update',
+    loadChildren: () => import('./bank-update/bank-update.module').then( m => m.BankUpdatePageModule)
+  },
+
+]
+;
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/"></ion-back-button>
         </ion-buttons>
@@ -11,21 +11,21 @@
 
 
     <ion-item>
-        <ion-label position="floating">First Name
+        <ion-label position="floating">Name TH
             <font color="danger">*</font>
         </ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="name_th" name="name_th"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label position="floating">Last Name
+        <ion-label position="floating"> Name EN
             <font color="danger">*</font>
         </ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="name_en" name="name_en"></ion-input>
     </ion-item>
 
 
     <div class="ion-padding">
-        <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
+        <ion-button expand="block" (click)="insert_expert_in()">บันทึก</ion-button>
     </div>
 
 

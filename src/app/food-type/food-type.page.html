@@ -1,50 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
-    <ion-title>food_type</ion-title>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ประเภทอาหาร</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>อาหารมังสวิรัติ</ion-label>
-      <ion-toggle color="success" checked></ion-toggle>
-     
-    </ion-item>
-
-    <ion-item-options side="end"  >
-      <ion-item-option (click)="unread(item)" color="danger" ><ion-icon name="trash"></ion-icon></ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>อาหารคลีน</ion-label>
-      <ion-toggle color="success" checked></ion-toggle>
-     
-    </ion-item>
-
-    <ion-item-options side="end"  >
-      <ion-item-option (click)="unread(item)" color="danger" ><ion-icon name="trash"></ion-icon></ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>อาหารปกติ</ion-label>
-      <ion-toggle color="success" checked></ion-toggle>
-     
-    </ion-item>
-
-    <ion-item-options side="end"  >
-      <ion-item-option (click)="unread(item)" color="danger" ><ion-icon name="trash"></ion-icon></ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-  
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/basedata/food-type/food-insert']">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_food_type()">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+
+  <ion-item-sliding *ngFor="let food_type of food_types">
+    <ion-item>
+      <ion-label>{{food_type.ft_name_th}}</ion-label>
+      <ion-toggle color="success" [(ngModel)]="food_type.ft_status" (click)="change_status_food_type(food_type)"></ion-toggle>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option (click)="edit_food_type(food_type)" color="warning">
+        <ion-icon name="create"></ion-icon>
+      </ion-item-option>
+      <ion-item-option (click)="remove_food_type(food_type)" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
 </ion-content>
