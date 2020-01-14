@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header style="background-color: #273440;">
   <ion-label>
     <ion-toolbar color="dark">
       <!-- <ion-avatar slot="start">
@@ -14,37 +14,37 @@
   </ion-label>
 </ion-header>
 
-<ion-content>
+<ion-content style="background-color: #F8F8F8; ">
   <div>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/basedata']">
+        <ion-card class="card" [routerLink]="['/basedata']" id="Basedata">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
             </ion-card-title>
           </ion-card-header>
           <ion-card-content class="ion-card-content">
-            <font style="font-size: 19px; margin-left:10%;">basedata</font>
+            <font style="font-size: 15px; margin-left:10%;">Basedata</font>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/expert']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/expert']" routerLinkActive="router-link-active" id="expert">
           <ion-card-header>
             <ion-card-title>
-              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+              <ion-icon size="large" ios="ios-people" name="people"></ion-icon>
             </ion-card-title>
           </ion-card-header>
           <ion-card-content class="ion-card-content">
-            <font style="font-size: 19px;">expert</font>
+            <font style="font-size: 15px; margin-left:20%;">Expert</font>   
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row responsive-sm>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/project']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/project']" routerLinkActive="router-link-active"id="C">
           <ion-card-header>
             <ion-card-title>
               <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
@@ -52,20 +52,20 @@
           </ion-card-header>
           <ion-card-content class="ion-card-content">
             <a></a>
-            <font style="font-size: 19px; margin-left:10%;">project</font>
+            <font style="font-size: 15px; margin-left:10%;">Project</font>
           </ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="card" [routerLink]="['/user']" routerLinkActive="router-link-active">
+        <ion-card class="card" [routerLink]="['/user']" routerLinkActive="router-link-active"id="D">
           <ion-card-header>
             <ion-card-title>
-              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+              <ion-icon size="large" name="person"></ion-icon>
             </ion-card-title>
           </ion-card-header>
-          <ion-card-content class="ion-card-content">
+          <ion-card-content class="ion-card-content">      
             <a></a>
-            <font style="font-size: 19px;">user</font>
+            <font style="font-size: 15px; margin-left:20%;">User</font>
           </ion-card-content>
         </ion-card>
       </ion-col>

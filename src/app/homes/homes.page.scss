@@ -12,7 +12,28 @@
     margin-left: 30%;
   }
   
+  #Basedata{
+ background: #90D2D8;
+ 
+  }
   
+#expert{
+  background: #B7DED2;
+  
+}
+#C{
+  background: #FFC2C2;
+  
+}
+#D{
+  background: #FFECB8;
+  
+}
+
+#center{
+text-align: center; 
+
+}
    .card
    {
         max-width: 140px;
@@ -20,7 +41,15 @@
         margin-bottom: -15px !important;
         margin-right: 1px !important;
         margin-left: 1px !important;
-        border-radius: 10px;      
+        border-radius: 10px;     
+        font-family: Kanit; 
+        font-weight: bold;
+        font-style: #5E5E5E;
+        
+   }
+
+   *{
+    font-family: Kanit;
    }
   
   //  .ion-card-menu{

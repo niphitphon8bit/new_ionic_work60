@@ -1,37 +1,41 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
-        <ion-title>expert</ion-title>
-    </ion-toolbar>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>expert</ion-title>
+  </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content>
-<div>
-    <ion-col>
-      <ion-card class="card" [routerLink]="['/expert/expert-in']">
-        <ion-card-header>
-          <ion-card-title>
-            <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content class="ion-card-content">
-          <font style="font-size: 10px; margin-left:10%;">????????????</font>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col>
-      <ion-card class="card" [routerLink]="['/expert/expert-out']">
-        <ion-card-header>
-          <ion-card-title>
-            <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content class="ion-card-content">
-          <font style="font-size: 10px; margin-left:10%;">?????????????</font>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </div>    </ion-row>
+  <div>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/expert/expert-in']" style="background-color: #FFC2C2;">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <font style="font-size: 15px; margin-left:10%;">Expert-in</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/expert/expert-out']" style="background-color: #FFECB8;">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-document" md="md-document"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <font style="font-size: 15px; margin-left:10%;">Expert-out</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
