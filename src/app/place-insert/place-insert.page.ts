@@ -1,6 +1,7 @@
-import { NavParams, ModalController } from '@ionic/angular';
+import { NavParams, ModalController, AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { PlaceService } from '../service/place.service';
 @Component({
   selector: 'app-place-insert',
   templateUrl: './place-insert.page.html',
@@ -15,34 +16,51 @@ export class PlaceInsertPage implements OnInit {
   constructor(
     private location: Location,
     private NavParams: NavParams,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private PlaceService: PlaceService,
+    private alertController: AlertController
   ) {
-
     this.name_th = "";
     this.name_en = "";
     this.status = "true";
   }
 
-
   public closeModal() {
-    this.modalCtrl.dismiss({
-      'dismissed': true
-    });
+    this.modalCtrl.dismiss("close");
   }
 
   ngOnInit() {
   }
 
-  back(){
+  back() {
     this.location.back();
   }
+
   insert_place() {
-    this.modalCtrl.dismiss({
-      'dismissed': true,
-      'name_th': this.name_th,
-      'name_en': this.name_en,
-      'status': this.status
+    this.PlaceService.insert_place_data(this.name_th,this.name_en).subscribe((res) => {
+      if(res.affectedRows > 0){
+        this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+      }else{
+        this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
+      }
     })
+  }
+
+  async presentAlert(title:string,description:string) {
+    const alert = await this.alertController.create({
+      header: title,
+      message: description,
+      buttons: [
+        {
+          text: 'ตกลง',
+          handler: (event) => {
+            this.closeModal()
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }

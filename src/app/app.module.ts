@@ -20,6 +20,7 @@ import { SkillInsertPage } from './skill-insert/skill-insert.page';
 import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.page';
 
 import { FoodUpdatePage } from './food-update/food-update.page';
+import { PlaceUpdatePage } from './place-update/place-update.page';
 import { MajorUpdatePage } from './major-update/major-update.page';
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MajorUpdatePage } from './major-update/major-update.page';
     MajorInsertPage,
     ExpertInInsertPage,
     FoodUpdatePage,
+    PlaceUpdatePage,
     MajorUpdatePage
   ],
   entryComponents: [
@@ -42,6 +44,7 @@ import { MajorUpdatePage } from './major-update/major-update.page';
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
+    PlaceUpdatePage
     FoodUpdatePage,
     MajorUpdatePage
   ],
