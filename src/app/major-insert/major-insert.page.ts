@@ -40,7 +40,7 @@ export class MajorInsertPage implements OnInit {
   insert_major() {
   this.MajorService.insert_major_data(this.name_th,this.name_en).subscribe((res) => {
     if(res.affectedRows > 0){
-      this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+      this.presentAlert("บันทึกสำเร็จ","รายการสาขาวิชาถูกเพิ่มเรียบร้อย")
     }else{
       this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
     }

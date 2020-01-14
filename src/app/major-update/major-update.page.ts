@@ -26,7 +26,7 @@ export class MajorUpdatePage implements OnInit {
   update_major() {
     this.MajorService.update_major_data(this.mj_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
-        this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+        this.presentAlert("บันทึกสำเร็จ","รายการสาขาวิชาถูกแก้ไขเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }

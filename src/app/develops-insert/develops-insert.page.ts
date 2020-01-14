@@ -40,7 +40,7 @@ export class DevelopsInsertPage implements OnInit {
   insert_develops() {
     this.DevelopService.insert_develops_data(this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
-        this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+        this.presentAlert("บันทึกสำเร็จ","รายการด้านการพัฒนาถูกเพิ่มเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }

@@ -23,7 +23,7 @@ export class PlaceUpdatePage implements OnInit {
   update_place() {
     this.PlaceService.update_place_data(this.place_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
-        this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+        this.presentAlert("บันทึกสำเร็จ","รายการสถานที่ถูกแก้ไขเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }

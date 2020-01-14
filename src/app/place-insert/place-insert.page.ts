@@ -39,7 +39,7 @@ export class PlaceInsertPage implements OnInit {
   insert_place() {
     this.PlaceService.insert_place_data(this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
-        this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+        this.presentAlert("บันทึกสำเร็จ","รายการสถานที่ถูกเพิ่มเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }

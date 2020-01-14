@@ -24,7 +24,7 @@ export class DevelopsUpdatePage implements OnInit {
   update_develops() {
     this.DevelopService.update_develops_data(this.dev_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
-        this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+        this.presentAlert("บันทึกสำเร็จ","รายการด้านการพัฒนาถูกแก้ไขเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }
