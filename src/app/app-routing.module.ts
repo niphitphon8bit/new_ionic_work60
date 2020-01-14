@@ -93,14 +93,16 @@ const routes: Routes = [
   } , {
     path: 'food-update',
     loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
-  },  {
-    path: 'place-update',
-    loadChildren: () => import('./place-update/place-update.module').then( m => m.PlaceUpdatePageModule)
   },
-
   {
+
     path: 'major-update',
     loadChildren: () => import('./major-update/major-update.module').then( m => m.MajorUpdatePageModule)
+  },
+  {
+    path: 'place-update',
+    loadChildren: () => import('./place-update/place-update.module').then( m => m.PlaceUpdatePageModule)
+
   },
 
 ]

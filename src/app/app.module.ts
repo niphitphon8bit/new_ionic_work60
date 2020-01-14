@@ -44,7 +44,7 @@ import { MajorUpdatePage } from './major-update/major-update.page';
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    PlaceUpdatePage
+    PlaceUpdatePage,
     FoodUpdatePage,
     MajorUpdatePage
   ],
