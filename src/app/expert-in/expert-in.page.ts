@@ -97,13 +97,13 @@ export class ExpertInPage implements OnInit {
       }
     }
   // remove_bank on index 
-  remove_db_expert_in(expert_in) {
-    let index = this.db_expert_in.indexOf(expert_in);
-    console.log(expert_in.ba_id);
+  remove_db_expert_in(expert) {
+    let index = this.db_expert_in.indexOf(expert);
+    console.log(expert.ba_id);
     if (index > -1) {
       this.db_expert_in.splice(index, 1);
     }
-    this.ExpertInService.expert_in_delete(expert_in.ep_id);
+    this.ExpertInService.expert_in_delete(expert.ep_id);
   }
   remove_expert_in(expert) {
     let index = this.experts.indexOf(expert);

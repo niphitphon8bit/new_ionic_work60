@@ -13,9 +13,9 @@ export class ExpertInService {
     return this.http.get("https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_expert_in/get_expert_all").map((res) => res.json());
   }
 
-  expert_in_delete(ba_id) {
-    console.log(`https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_bank/delete_bank/${ba_id}`)
-    return this.http.delete(`https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_bank/delete_bank/${ba_id}`)
+  expert_in_delete(ep_id) {
+    console.log(`https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_expert_in/delete_expert_in/${ep_id}`)
+    return this.http.delete(`https://10.80.39.17/TSP60/Thepd-nu/index.php/tr/API/Ionic_expert_in/delete_expert_in/${ep_id}`)
       .subscribe(
         result => console.log(result),
         err => console.error(err)
