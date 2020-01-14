@@ -25,6 +25,7 @@ import { BankUpdatePage } from './bank-update/bank-update.page';
 import { ExpertInUpdatePage } from "./expert-in-update/expert-in-update.page"
 import { MajorUpdatePage } from './major-update/major-update.page';
 import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.page'
+import { DevelopsUpdatePage } from './develops-update/develops-update.page';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,6 @@ import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.pa
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    FoodUpdatePage,
     PlaceUpdatePage,
     BankUpdatePage,
     MajorUpdatePage,
@@ -43,7 +43,8 @@ import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.pa
     ExpertOutInsertPage,
     ExpertOutUpdatePage,
     FoodUpdatePage,
-    ExpertTypeUpdatePage
+    ExpertTypeUpdatePage,
+    DevelopsUpdatePage
   ],
   entryComponents: [
     BankInsertPage,
@@ -53,7 +54,6 @@ import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.pa
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    FoodUpdatePage,
     PlaceUpdatePage,
     BankUpdatePage,
     MajorUpdatePage,
@@ -61,7 +61,8 @@ import { ExpertTypeUpdatePage } from './expert-type-update/expert-type-update.pa
     ExpertOutInsertPage,
     ExpertOutUpdatePage,
     FoodUpdatePage,
-    ExpertTypeUpdatePage
+    ExpertTypeUpdatePage,
+    DevelopsUpdatePage
   ],
   imports: [
     BrowserModule,

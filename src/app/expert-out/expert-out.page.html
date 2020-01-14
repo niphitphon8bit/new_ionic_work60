@@ -8,6 +8,46 @@
 </ion-header>
 
 <ion-content>
+<<<<<<< HEAD
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>นาย นพดล จันทร์สุข</ion-label>
+        <ion-toggle [(ngModel)]="st1" color="success"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)" color="danger"><ion-icon name="trash"></ion-icon></ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>นาย สรรค์ปกรณ์ สุทธิรัตนพร</ion-label>
+        <ion-toggle [(ngModel)]="st2" color="success"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+          <ion-item-option (click)="unread(item)" color="danger"><ion-icon name="trash"></ion-icon></ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+    
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>นาย ชนาธิป คมคาย</ion-label>
+        <ion-toggle [(ngModel)]="st3" color="success" checked></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="unread(item)" color="danger"><ion-icon name="trash"></ion-icon></ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" [routerLink]="['/expert/expert-out-insert']">
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+=======
   <ion-item-sliding *ngFor="let expert_out of expert_out">
     <ion-item>
       <ion-label>{{expert_out.ep_fname}} {{expert_out.ep_lname}}</ion-label>
@@ -28,4 +68,5 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 </ion-content>

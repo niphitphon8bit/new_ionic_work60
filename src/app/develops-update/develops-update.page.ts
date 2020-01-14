@@ -1,44 +1,28 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { DevelopService } from './../service/develop.service';
+import { DevelopService } from '../service/develop.service';
+
 
 @Component({
-  selector: 'app-develops-insert',
-  templateUrl: './develops-insert.page.html',
-  styleUrls: ['./develops-insert.page.scss'],
+  selector: 'app-develops-update',
+  templateUrl: './develops-update.page.html',
+  styleUrls: ['./develops-update.page.scss'],
 })
-export class DevelopsInsertPage implements OnInit {
+export class DevelopsUpdatePage implements OnInit {
 
-  private name_th: string;
-  private name_en: string;
-  private status: string;
-
+  @Input() name_th: string;
+  @Input() name_en: string;
+  @Input() dev_id: string;
   constructor(
-    private location: Location,
-    private NavParams: NavParams,
     private modalCtrl: ModalController,
     private DevelopService: DevelopService,
-    private alertController: AlertController
-  ) {
-    this.name_th = "";
-    this.name_en = "";
-    this.status = "true";
-  }
-
-  public closeModal() {
-    this.modalCtrl.dismiss("close");
-  }
+    private alertController: AlertController) {}
 
   ngOnInit() {
   }
 
-  back() {
-    this.location.back();
-  }
-
-  insert_develops() {
-    this.DevelopService.insert_develops_data(this.name_th,this.name_en).subscribe((res) => {
+  update_develops() {
+    this.DevelopService.update_develops_data(this.dev_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
       }else{
@@ -63,6 +47,10 @@ export class DevelopsInsertPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  closeModal() {
+    this.modalCtrl.dismiss("close");
   }
 
 }

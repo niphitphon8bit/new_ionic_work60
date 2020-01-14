@@ -1,19 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http'
 import 'rxjs/add/operator/map'
+<<<<<<< HEAD
+=======
 
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @Injectable({
   providedIn: 'root'
 })
 export class ExpertTypeService {
 
+<<<<<<< HEAD
+=======
   private url:string = "http://localhost:3000";
 
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   constructor(
     private http: Http
   ) { }
   
   get_all_expert_type_data() {
+<<<<<<< HEAD
+    return this.http.get("http://localhost:3000/api/tr_expert_type").map((res) => res.json());
+  }
+
+=======
     return this.http.get(this.url + "/expert_type").map((res) => res.json());
   }
 
@@ -45,4 +56,5 @@ export class ExpertTypeService {
     }
     return this.http.put(this.url + "/expert_type/update/" + ept_id,data).map((res) => res.json());
   }
+>>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 }
