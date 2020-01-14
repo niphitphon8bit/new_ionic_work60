@@ -1,0 +1,4 @@
+install angular/http
+- npm i @angular/http
+run
+- ionic serve -l
