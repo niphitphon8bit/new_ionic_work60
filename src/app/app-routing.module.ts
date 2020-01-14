@@ -94,12 +94,26 @@ const routes: Routes = [
   } , {
     path: 'food-update',
     loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
-  },  {
+  },{
     path: 'expert-out-update',
     loadChildren: () => import('./expert-out-update/expert-out-update.module').then( m => m.ExpertOutUpdatePageModule)
-  },
+  },{
+    path: 'expert-out-update',
+    loadChildren: () => import('./expert-out-update/expert-out-update.module').then( m => m.ExpertOutUpdatePageModule)
+  },{
 
-]
+    path: 'major-update',
+    loadChildren: () => import('./major-update/major-update.module').then( m => m.MajorUpdatePageModule)
+  },
+  {
+    path: 'place-update',
+    loadChildren: () => import('./place-update/place-update.module').then( m => m.PlaceUpdatePageModule)
+
+  },
+  {
+    path: 'expert-in-update',
+    loadChildren: () => import('./expert-in-update/expert-in-update.module').then( m => m.ExpertInUpdatePageModule)
+  },]
 ;
 @NgModule({
   imports: [

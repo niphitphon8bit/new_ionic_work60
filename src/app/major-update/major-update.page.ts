@@ -1,50 +1,39 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { PlaceService } from '../service/place.service';
-@Component({
-  selector: 'app-place-insert',
-  templateUrl: './place-insert.page.html',
-  styleUrls: ['./place-insert.page.scss'],
-})
-export class PlaceInsertPage implements OnInit {
+import { MajorService } from '../service/major.service';
 
-  private name_th: string;
-  private name_en: string;
-  private status: string;
+@Component({
+  selector: 'app-major-update',
+  templateUrl: './major-update.page.html',
+  styleUrls: ['./major-update.page.scss'],
+})
+export class MajorUpdatePage implements OnInit {
+
+  @Input() name_th: string;
+  @Input() name_en: string;
+  @Input() mj_id: string;
+
 
   constructor(
-    private location: Location,
-    private NavParams: NavParams,
     private modalCtrl: ModalController,
-    private PlaceService: PlaceService,
-    private alertController: AlertController
-  ) {
-    this.name_th = "";
-    this.name_en = "";
-    this.status = "true";
-  }
-
-  public closeModal() {
-    this.modalCtrl.dismiss("close");
-  }
+    private MajorService: MajorService,
+    private alertController: AlertController) {}
+  
 
   ngOnInit() {
   }
 
-  back() {
-    this.location.back();
-  }
-
-  insert_place() {
-    this.PlaceService.insert_place_data(this.name_th,this.name_en).subscribe((res) => {
+  update_major() {
+    this.MajorService.update_major_data(this.mj_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }
     })
+    
   }
+
 
   async presentAlert(title:string,description:string) {
     const alert = await this.alertController.create({
@@ -62,5 +51,12 @@ export class PlaceInsertPage implements OnInit {
 
     await alert.present();
   }
+
+  closeModal() {
+    this.modalCtrl.dismiss("close");
+  }
+
+
+
 
 }

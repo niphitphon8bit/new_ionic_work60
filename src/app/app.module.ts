@@ -20,9 +20,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SkillInsertPage } from './skill-insert/skill-insert.page';
 import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.page';
-
+import {ExpertInUpdatePage} from "./expert-in-update/expert-in-update.page"
 import { FoodUpdatePage } from './food-update/food-update.page';
-
+import { PlaceUpdatePage } from './place-update/place-update.page';
+import { MajorUpdatePage } from './major-update/major-update.page';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +35,19 @@ import { FoodUpdatePage } from './food-update/food-update.page';
     MajorInsertPage,
     ExpertInInsertPage,
     FoodUpdatePage,
+	ExpertOutInsertPage,
+    ExpertOutUpdatePage,
+PlaceUpdatePage,
+    MajorUpdatePage,
+	ExpertInUpdatePage<<<<<<< .mine
     ExpertOutInsertPage,
     ExpertOutUpdatePage
   ],
+=======
+	PlaceUpdatePage,
+    MajorUpdatePage,
+	ExpertInUpdatePage  ],
+>>>>>>> .theirs
   entryComponents: [
     BankInsertPage,
     PlaceInsertPage,
@@ -46,8 +57,18 @@ import { FoodUpdatePage } from './food-update/food-update.page';
     MajorInsertPage,
     ExpertInInsertPage,
     FoodUpdatePage,
-    ExpertOutInsertPage,
+	ExpertOutInsertPage,
     ExpertOutUpdatePage
+	PlaceUpdatePage,
+    MajorUpdatePage,
+	ExpertInUpdatePage
+<<<<<<< .mine
+    ExpertOutUpdatePage
+
+=======
+    MajorUpdatePage,
+	ExpertInUpdatePage
+>>>>>>> .theirs
   ],
   imports: [
     BrowserModule,

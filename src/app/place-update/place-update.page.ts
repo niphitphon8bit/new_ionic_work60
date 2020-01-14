@@ -1,49 +1,34 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { PlaceService } from '../service/place.service';
+
 @Component({
-  selector: 'app-place-insert',
-  templateUrl: './place-insert.page.html',
-  styleUrls: ['./place-insert.page.scss'],
+  selector: 'app-place-update',
+  templateUrl: './place-update.page.html',
+  styleUrls: ['./place-update.page.scss'],
 })
-export class PlaceInsertPage implements OnInit {
+export class PlaceUpdatePage implements OnInit {
 
-  private name_th: string;
-  private name_en: string;
-  private status: string;
-
+  @Input() name_th: string;
+  @Input() name_en: string;
+  @Input() place_id: string;
   constructor(
-    private location: Location,
-    private NavParams: NavParams,
     private modalCtrl: ModalController,
     private PlaceService: PlaceService,
-    private alertController: AlertController
-  ) {
-    this.name_th = "";
-    this.name_en = "";
-    this.status = "true";
-  }
-
-  public closeModal() {
-    this.modalCtrl.dismiss("close");
-  }
+    private alertController: AlertController) {}
 
   ngOnInit() {
   }
 
-  back() {
-    this.location.back();
-  }
-
-  insert_place() {
-    this.PlaceService.insert_place_data(this.name_th,this.name_en).subscribe((res) => {
+  update_place() {
+    this.PlaceService.update_place_data(this.place_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
       }else{
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
       }
     })
+    
   }
 
   async presentAlert(title:string,description:string) {
@@ -61,6 +46,10 @@ export class PlaceInsertPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  closeModal() {
+    this.modalCtrl.dismiss("close");
   }
 
 }
