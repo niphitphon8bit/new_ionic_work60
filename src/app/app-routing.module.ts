@@ -113,7 +113,7 @@ const routes: Routes = [
   {
     path: 'expert-out-update',
     loadChildren: () => import('./expert-out-update/expert-out-update.module').then(m => m.ExpertOutUpdatePageModule)
-  }, {
+  },
 ]
   ;
 @NgModule({
