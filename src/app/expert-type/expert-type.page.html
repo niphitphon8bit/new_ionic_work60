@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>expert_type</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let expert of db_expert_types">
+      <ion-item>
+        <ion-label>{{expert.ept_name_th}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="expert.status"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)=" remove_db_expert_types(expert)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let expert of expert_types">
+      <ion-item>
+        <ion-label>{{expert.name_th}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="expert.status"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)=" remove_expert_type(expert)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_expert_type_modal()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

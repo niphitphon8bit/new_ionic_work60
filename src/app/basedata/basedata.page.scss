@@ -1,0 +1,57 @@
+
+.welcome-card img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  
+  .my-menu{
+    background: #333;
+   }
+  
+  ion-icon{
+    margin-left: 30%;
+  }
+  #Develops{
+    background: #FFC2C2;
+  }
+  #food{
+  background:#FFECB8;
+  }
+  #place{
+  background: #B7DED2;
+  
+   }
+  #major{
+  background: #90D2D8;
+   }
+   #bank{
+  background: #90D2D8;
+     }
+  #expert{
+  background: #FFC2C2;
+  }
+   .card
+   {
+        max-width: 140px;
+        max-height: 150px;
+        margin-bottom: -15px !important;
+        margin-right: 1px !important;
+        margin-left: 1px !important;
+        border-radius: 10px; 
+        font-family: Kanit;
+        font-weight: bold;
+        font-style: #5E5E5E;   
+   }
+
+   *{
+    font-family: Kanit;
+   }
+  
+  //  .ion-card-menu{
+  //    height: 20vh;
+  //    width: 25vh;
+  //  }
+  
+  //  .ion-card-content{
+  //   margin-bottom: 100px;
+  // }

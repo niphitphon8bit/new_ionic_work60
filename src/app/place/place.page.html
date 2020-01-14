@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Place</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed"  (click)="insert_place_modal()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let place of db_places">
+      <ion-item>
+        <ion-label>{{place.place_name_th}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="place.status" (click)="change(place)"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove_db_place(place)" color="danger">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let place of place">
+      <ion-item>
+        <ion-label>{{place.name_th}}</ion-label>
+        <ion-toggle color="success" [(ngModel)]="place.status"></ion-toggle>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="remove_place(place)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

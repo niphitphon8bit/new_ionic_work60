@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Basedata</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #F8F8F8; ">
+  <div>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/develops']" routerLinkActive="router-link-active"
+          id="Develops">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" name="construct"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <font style="font-size: 15px; margin-left:10%;">Develops</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/food-type']" routerLinkActive="router-link-active" id="food">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" name="pizza"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <font style="font-size: 15px; margin-left:10%;">Food-type</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/place']" routerLinkActive="router-link-active" id="place">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" name="pin"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 15px; margin-left:25%;">place</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/major']" routerLinkActive="router-link-active" id="major">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" name="trophy"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 15px; margin-left:25%;">Major</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row responsive-sm>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/bank']" routerLinkActive="router-link-active" id="bank">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" name="cash"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 15px; margin-left:25%;">Bank</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="card" [routerLink]="['/basedata/expert-type']" routerLinkActive="router-link-active"
+          id="expert">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon size="large" ios="ios-person" md="md-person"></ion-icon>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-card-content">
+            <a></a>
+            <font style="font-size: 15px; margin-left:20%;">Expert</font>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

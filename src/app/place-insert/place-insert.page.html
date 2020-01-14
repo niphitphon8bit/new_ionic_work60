@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/basedata/place" (click)="closeModal()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Place Insert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">ชื่อ (ภาษาไทย) <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="name_th" name="name_th"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">ชื่อ (อังกฤษ)<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="name_eng" name="name_eng"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" type="submit" (click)="insert_place()">บันทึก</ion-button>
+  </form>
+</ion-content>

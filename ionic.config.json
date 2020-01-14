@@ -1,0 +1,7 @@
+{
+  "name": "tr_work",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
