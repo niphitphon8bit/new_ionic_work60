@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/expert/expert-out" (click)="closeModal()"></ion-back-button>
+      </ion-buttons>
+      <ion-title>แก้ไขวิทยากรภายนอก</ion-title>
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>ชื่อ <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input required type="text" [(ngModel)]="ep_fname" name="ep_fname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>นามสกุล <ion-text color="danger">*</ion-text>
+    </ion-label>
+    <ion-input required type="text" [(ngModel)]="ep_lname" name="ep_lname"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button expand="block" (click)="update_expert_out()">บันทึก</ion-button>
+</ion-content>

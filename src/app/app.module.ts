@@ -1,3 +1,5 @@
+import { ExpertOutInsertPage } from './expert-out-insert/expert-out-insert.page';
+import { ExpertOutUpdatePage } from './expert-out-update/expert-out-update.page';
 import { ExpertInInsertPage } from './expert-in-insert/expert-in-insert.page';
 import { HttpClientModule } from '@angular/common/http';
 import { MajorInsertPage } from './major-insert/major-insert.page';
@@ -36,7 +38,9 @@ import { MajorUpdatePage } from './major-update/major-update.page';
     PlaceUpdatePage,
     BankUpdatePage,
     MajorUpdatePage,
-    ExpertInUpdatePage
+    ExpertInUpdatePage,
+    ExpertOutInsertPage,
+    ExpertOutUpdatePage
   ],
   entryComponents: [
     BankInsertPage,
@@ -50,7 +54,9 @@ import { MajorUpdatePage } from './major-update/major-update.page';
     PlaceUpdatePage,
     BankUpdatePage,
     MajorUpdatePage,
-    ExpertInUpdatePage
+    ExpertInUpdatePage,
+    ExpertOutInsertPage,
+    ExpertOutUpdatePage
   ],
   imports: [
     BrowserModule,
