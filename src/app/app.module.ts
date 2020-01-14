@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SkillInsertPage } from './skill-insert/skill-insert.page';
 import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.page';
-
+import {ExpertInUpdatePage} from "./expert-in-update/expert-in-update.page"
 import { FoodUpdatePage } from './food-update/food-update.page';
 
 @NgModule({
@@ -31,7 +31,8 @@ import { FoodUpdatePage } from './food-update/food-update.page';
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    FoodUpdatePage
+    FoodUpdatePage,
+    ExpertInUpdatePage
   ],
   entryComponents: [
     BankInsertPage,
@@ -41,7 +42,8 @@ import { FoodUpdatePage } from './food-update/food-update.page';
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    FoodUpdatePage
+    FoodUpdatePage,
+    ExpertInUpdatePage
   ],
   imports: [
     BrowserModule,
