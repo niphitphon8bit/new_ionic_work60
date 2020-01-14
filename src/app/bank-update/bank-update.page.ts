@@ -33,7 +33,7 @@ export class BankUpdatePage implements OnInit {
     console.log(this.balance_name, this.name, this.ba_id, this.text)
     this.BankService.update_bank(this.ba_id, this.balance_name, this.name, this.text).subscribe((res) => {
       if (res.affectedRows > 0) {
-        this.presentAlert("บันทึกสำเร็จ", "รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
+        this.presentAlert("บันทึกสำเร็จ", "ประเภทธนาคารที่เปิดบัญชีถูกแก้ไขเเรียบร้อย")
         this.get_all_bank_base()
       } else {
         this.presentAlert("ไม่สามารถบันทึกข้อมูลได้", "กรุณาติดต่อผู้ดูแลระบบ")
