@@ -3,18 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/basedata/develops" (click)="closeModal()"></ion-back-button>
     </ion-buttons>
-<<<<<<< HEAD
     <ion-title>เพิ่มการพัฒนา</ion-title>
-=======
-    <ion-title>develops_insert</ion-title>
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-item>
-<<<<<<< HEAD
     <ion-label>ชื่อ (ภาษาไทย) <ion-text color="danger">*</ion-text>
     </ion-label>
     <ion-input required type="text" [(ngModel)]="name_th" name="name_th"></ion-input>
@@ -26,16 +21,4 @@
   </ion-item>
   <br>
   <ion-button expand="block" (click)="insert_develops()">บันทึก</ion-button>
-=======
-    <ion-label>ชื่อ (ภาษาไทย)<ion-text color="danger">*</ion-text>
-    </ion-label>
-    <ion-input [(ngModel)]="name_th" name="name_th"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>ชื่อ (อังกฤษ)<ion-text color="danger">*</ion-text>
-    </ion-label>
-    <ion-input [(ngModel)]="name_en" name="name_en"></ion-input>
-  </ion-item>
-  <ion-button expand="block"  (click)="insert_develop()">บันทึก</ion-button>
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 </ion-content>

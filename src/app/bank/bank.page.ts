@@ -1,14 +1,8 @@
 import { BankInsertPage } from './../bank-insert/bank-insert.page';
-<<<<<<< HEAD
-import { ModalController } from '@ionic/angular';
-import { BankService } from './../service/bank.service';
-import { Component, OnInit } from '@angular/core';
-=======
 import { ModalController, AlertController } from '@ionic/angular';
 import { BankService } from './../service/bank.service';
 import { Component, OnInit } from '@angular/core';
 import { BankUpdatePage } from '../bank-update/bank-update.page';
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
 @Component({
   selector: 'app-bank',
@@ -20,17 +14,10 @@ export class BankPage implements OnInit {
 
   constructor(
     private BankService: BankService,
-<<<<<<< HEAD
-    private modalController: ModalController
-  ) {
-
-  }
-=======
     private modalController: ModalController,
     private alertController: AlertController
   ) { }
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
   async insert_bank_modal() {
     const modal = await this.modalController.create({
@@ -39,68 +26,22 @@ export class BankPage implements OnInit {
 
     modal.onDidDismiss()
       .then((bank) => {
-<<<<<<< HEAD
-        if(bank.data.status){
-=======
         if (bank.data.status) {
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
           var insert_bank = {
             balance_name: bank.data.balance_name,
             name: bank.data.name,
             text: bank.data.text,
-<<<<<<< HEAD
-            status: bank.data.status == "true"  ? "Y": "N"
-          };
-          this.BankService.bank_insert(insert_bank);
-          console.log(bank.data.status);
-          this.banks.push(insert_bank);  
-=======
             status: bank.data.status == "true" ? "Y" : "N"
           };
           this.BankService.bank_insert(insert_bank);
           console.log(bank.data.status);
           this.get_all_bank()
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
         }
       })
     return await modal.present();
   }
   // db_bank query from database
-<<<<<<< HEAD
-  public db_banks: any = null;
-
-  // banks data mock-up
-  private banks = [
-    {
-      balance_name: "บัญชีฝาก",
-      name: 'Kasikorn',
-      text: '',
-      status: 'true',
-    },
-    {
-      balance_name: "บัญชีถอน",
-      name: 'Thai Army',
-      text: '',
-      status: 'true',
-    },
-    {
-      balance_name: "บัญชีฝาก",
-      name: 'Krungthai',
-      text: '',
-      status: 'false',
-    },
-    {
-      balance_name: 'บัญชีถอน',
-      name: 'Bangkok Bank',
-      text: '',
-      status: 'false',
-    }
-  ];
-
-
-=======
   public db_banks: any = [];
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
   ngOnInit() {
     this.get_all_bank();
@@ -124,12 +65,6 @@ export class BankPage implements OnInit {
 
   // get all bank from database
   get_all_bank() {
-<<<<<<< HEAD
-    this.BankService.get_all_bank_data().subscribe((res) => {
-      this.db_banks = res;
-      console.log(this.db_banks);
-      this.set_bank_status();
-=======
     this.db_banks = []
     this.BankService.get_all_bank_data().subscribe((res) => {
       res.forEach(element => {
@@ -143,7 +78,6 @@ export class BankPage implements OnInit {
       })
       console.log(this.db_banks);
       // this.set_bank_status();
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
     })
 
   }
@@ -158,13 +92,8 @@ export class BankPage implements OnInit {
     }
   }
 
-<<<<<<< HEAD
-   // remove_bank on index 
-   remove_db_bank(bank) {
-=======
   // remove_bank on index 
   remove_db_bank(bank) {
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
     let index = this.db_banks.indexOf(bank);
     console.log(bank.ba_id);
     if (index > -1) {
@@ -173,14 +102,6 @@ export class BankPage implements OnInit {
     this.BankService.bank_delete(bank.ba_id);
   }
 
-<<<<<<< HEAD
-  // remove_bank on index 
-  remove_bank(bank) {
-    let index = this.banks.indexOf(bank);
-    if (index > -1) {
-      this.banks.splice(index, 1);
-    }
-=======
 
 
 
@@ -229,7 +150,6 @@ export class BankPage implements OnInit {
     });
 
     await alert.present();
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   }
 
 }

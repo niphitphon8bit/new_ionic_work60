@@ -1,32 +1,19 @@
 <ion-header>
   <ion-toolbar color="dark">
-<<<<<<< HEAD
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title>การพัฒนา</ion-title>
-=======
-      <ion-buttons slot="start">
-          <ion-back-button defaultHref="/"></ion-back-button>
-        </ion-buttons>
-    <ion-title>Develops</ion-title>
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<<<<<<< HEAD
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_develops()">
-=======
-  
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_develop_modal()">
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-<<<<<<< HEAD
   <ion-item-sliding *ngFor="let develop of develops">
     <ion-item>
       <ion-label>{{develop.dev_name_th}}</ion-label>
@@ -37,38 +24,8 @@
         <ion-icon name="create"></ion-icon>
       </ion-item-option>
       <ion-item-option (click)="remove_develops(develop)" color="danger">
-=======
-  <ion-item-sliding *ngFor="let develop of db_develops">
-    <ion-item>
-      <ion-label>{{develop.dev_name_th}}</ion-label>
-      <ion-toggle color="success" [(ngModel)]="develop.status" (click)="change(develop)"></ion-toggle>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option (click)="remove_db_develop(develop)" color="danger">
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
         <ion-icon name="trash"></ion-icon>
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
-<<<<<<< HEAD
 </ion-content>
-=======
-
-  <ion-item-sliding *ngFor="let develop of develops">
-    <ion-item>
-      <ion-label>{{develop.name_th}}</ion-label>
-      <ion-toggle checked color="success"[(ngModel)]="develop.status"></ion-toggle>
-    </ion-item>
-
-    <ion-item-options side="end">
-      <ion-item-option color="danger" (click)="remove(develop)"><ion-icon name="trash" ></ion-icon></ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-
-<!--  -->
-
-
-
-</ion-content>
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b

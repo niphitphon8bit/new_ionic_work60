@@ -76,34 +76,8 @@ const routes: Routes = [
     loadChildren: () => import('./develops-insert/develops-insert.module').then(m => m.DevelopsInsertPageModule)
   },
   {
-<<<<<<< HEAD
-    path: 'basedata/skill',
-    loadChildren: () => import('./skill/skill.module').then(m => m.SkillPageModule)
-  },
-  {
-    path: 'basedata/skill/skill-insert',
-    loadChildren: () => import('./skill-insert/skill-insert.module').then(m => m.SkillInsertPageModule)
-  },
-
-  {
-    path: 'major-insert',
-    loadChildren: () => import('./major-insert/major-insert.module').then(m => m.MajorInsertPageModule)
-  },  {
-    path: 'place-insert',
-    loadChildren: () => import('./place-insert/place-insert.module').then( m => m.PlaceInsertPageModule)
-  } , {
-    path: 'food-update',
-    loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
-  },
-  {
     path: 'develops-update',
     loadChildren: () => import('./develops-update/develops-update.module').then( m => m.DevelopsUpdatePageModule)
-  },
-]
-;
-=======
-    path: 'basedata/skill/skill-insert',
-    loadChildren: () => import('./skill-insert/skill-insert.module').then(m => m.SkillInsertPageModule)
   },
   {
     path: 'major-insert',
@@ -143,7 +117,6 @@ const routes: Routes = [
 
 ]
   ;
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
