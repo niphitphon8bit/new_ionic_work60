@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-=======
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common";
 import { ExpertOutService } from './../service/expert-out.service';
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
 @Component({
   selector: 'app-expert-out-insert',
@@ -14,9 +10,6 @@ import { ExpertOutService } from './../service/expert-out.service';
 })
 export class ExpertOutInsertPage implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-=======
   private fname: string;
   private lname: string;
   private status: string;
@@ -31,13 +24,10 @@ export class ExpertOutInsertPage implements OnInit {
       this.lname = "";
       this.status = "true";
     }
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-=======
   public closeModal() {
     this.modalCtrl.dismiss("close");
   }
@@ -73,5 +63,4 @@ export class ExpertOutInsertPage implements OnInit {
     await alert.present();
   }
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 }

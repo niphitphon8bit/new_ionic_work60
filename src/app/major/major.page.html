@@ -9,39 +9,12 @@
 
 <ion-content>
   <!-- fab placed to the top end -->
-<<<<<<< HEAD
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_major_modal()">
-=======
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="insert_major()">
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 
-<<<<<<< HEAD
-  <ion-list>
-
-    <ion-item-sliding *ngFor="let major of db_majors">
-      <ion-item>
-        <ion-label>{{major.mj_name_th}}</ion-label>
-        <ion-toggle color="success" [(ngModel)]="major.status" (click)="change(major)"></ion-toggle>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="remove_db_bank(major)" color="danger">
-          <ion-icon name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-
-    <ion-item-sliding *ngFor="let major of majors">
-      <ion-item>
-        <ion-label>{{major.name_th}}</ion-label>
-        <ion-toggle color="success" [(ngModel)]="major.status"></ion-toggle>
-      </ion-item>
-      <ion-item-options side="end">
-        <ion-item-option (click)="remove_major(major)" color="danger">
-=======
 
     <ion-item-sliding *ngFor="let major of majors">
       <ion-item>
@@ -53,14 +26,8 @@
           <ion-icon name="create"></ion-icon>
         </ion-item-option>
         <ion-item-option (click)="remove_majors(major)" color="danger">
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
           <ion-icon name="trash"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
-<<<<<<< HEAD
-  </ion-list>
-
-=======
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 </ion-content>

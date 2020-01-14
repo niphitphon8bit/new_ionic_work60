@@ -9,10 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class BankService {
 
-<<<<<<< HEAD
-=======
   private url: string = "http://localhost:3000";
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   constructor(
     private http: Http,
     private httpClient: HttpClient
@@ -65,8 +62,6 @@ export class BankService {
 
   }
 
-<<<<<<< HEAD
-=======
   update_bank(ba_id: string, ba_balance_name: string, ba_name: string, ba_text: string) {
     let data = {
       "ba_balance_name": ba_balance_name,
@@ -82,5 +77,4 @@ export class BankService {
     }
     return this.http.put(this.url + "/bank/" + ba_id, data).map((res) => res.json());
   }
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 }

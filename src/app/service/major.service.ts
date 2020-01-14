@@ -1,30 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http'
 import 'rxjs/add/operator/map'
-<<<<<<< HEAD
-=======
-
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @Injectable({
   providedIn: 'root'
 })
 export class MajorService {
-<<<<<<< HEAD
-
-=======
   
   private url:string = "http://localhost:3000";
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   constructor(
     private http: Http
   ) { }
 
   get_all_major_data() {
-<<<<<<< HEAD
-    return this.http.get("http://localhost:3000/api/tr_major").map((res) => res.json());
-  }
-}
-=======
     return this.http.get(this.url + "/tr_major").map((res) => res.json());
   }
   insert_major_data(name_th:string,name_en:string){
@@ -56,4 +43,3 @@ export class MajorService {
   }
 }
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b

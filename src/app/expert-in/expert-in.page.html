@@ -22,13 +22,6 @@
 
         <ion-item-sliding *ngFor="let expert of db_expert_in">
             <ion-item>
-<<<<<<< HEAD
-                <ion-label>{{expert.ep_fname}}</ion-label>
-                <ion-toggle color="success" [(ngModel)]="expert.status" (click)="change(expert)"></ion-toggle>
-            </ion-item>
-            <ion-item-options side="end">
-                <ion-item-option (click)="remove_expert_in(expert)" color="danger">
-=======
                 <ion-label>{{expert.ep_fname}} {{expert.ep_lname}} </ion-label>
                 <ion-toggle color="success" [(ngModel)]="expert.ep_active" (click)="update_status_expert_in(expert)"></ion-toggle>
             </ion-item>
@@ -37,35 +30,23 @@
                     <ion-icon name="create"></ion-icon>
                 </ion-item-option>
                 <ion-item-option (click)="remove_db_expert_in(expert)" color="danger">
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
                     <ion-icon name="trash"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
         </ion-item-sliding>
 
 
-<<<<<<< HEAD
-        <ion-item-sliding *ngFor="let expert of experts">
-            <ion-item>
-                <ion-label>{{expert.name_th}}</ion-label>
-                <ion-toggle color="success" [(ngModel)]="expert.status"></ion-toggle>
-=======
         <!-- <ion-item-sliding *ngFor="let expert of experts">
             <ion-item>
                 <ion-label>{{expert.ep_fname}}{{expert.ep_lname}}</ion-label>
                 <ion-toggle color="success" [(ngModel)]="expert.ep_active"></ion-toggle>
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
             </ion-item>
             <ion-item-options side="end">
                 <ion-item-option (click)="remove_expert_in(expert)" color="danger">
                     <ion-icon name="trash"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
-<<<<<<< HEAD
-        </ion-item-sliding>
-=======
         </ion-item-sliding> -->
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
 
 

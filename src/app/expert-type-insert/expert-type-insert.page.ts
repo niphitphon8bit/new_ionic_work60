@@ -1,15 +1,9 @@
-<<<<<<< HEAD
-import { NavParams, ModalController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-=======
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ExpertTypeService } from '../service/expert-type.service';
 
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @Component({
   selector: 'app-expert-type-insert',
   templateUrl: './expert-type-insert.page.html',
@@ -24,14 +18,10 @@ export class ExpertTypeInsertPage implements OnInit {
   constructor(
     private location: Location,
     private NavParams: NavParams,
-<<<<<<< HEAD
-    private modalCtrl: ModalController
-=======
     private modalCtrl: ModalController,
     private expertTypeService: ExpertTypeService,
     private alertController: AlertController
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   ) {
     this.name_th = "";
     this.name_en = "";
@@ -39,13 +29,7 @@ export class ExpertTypeInsertPage implements OnInit {
   }
 
   public closeModal() {
-<<<<<<< HEAD
-    this.modalCtrl.dismiss({
-      'dismissed': true
-    });
-=======
     this.modalCtrl.dismiss("close");
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   }
 
   ngOnInit() {
@@ -56,16 +40,6 @@ export class ExpertTypeInsertPage implements OnInit {
   }
 
   insert_expert_type() {
-<<<<<<< HEAD
-    this.modalCtrl.dismiss({
-      'dismissed': true,
-      'name_th': this.name_th,
-      'name_en': this.name_en,
-      'status': this.status
-    })
-  }
-}
-=======
     this.expertTypeService.insert_expert_type_data(this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทวิทยากรเพิ่มเรียบร้อย")
@@ -96,4 +70,3 @@ export class ExpertTypeInsertPage implements OnInit {
 }
 
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { ExpertOutService } from './../service/expert-out.service';
 import { ModalController, AlertController } from '@ionic/angular';
 import { ExpertOutUpdatePage } from '../expert-out-update/expert-out-update.page';
 import { ExpertOutInsertPage } from './../expert-out-insert/expert-out-insert.page';
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 
 @Component({
   selector: 'app-expert-out',
@@ -14,11 +11,6 @@ import { ExpertOutInsertPage } from './../expert-out-insert/expert-out-insert.pa
 })
 export class ExpertOutPage implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit() {
-=======
   public expert_out: any = [];
 
   constructor(
@@ -130,7 +122,6 @@ export class ExpertOutPage implements OnInit {
     });
 
     await alert.present();
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   }
 
 }

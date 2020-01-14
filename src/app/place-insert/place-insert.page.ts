@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-import { NavParams, ModalController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-=======
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { PlaceService } from '../service/place.service';
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 @Component({
   selector: 'app-place-insert',
   templateUrl: './place-insert.page.html',
@@ -22,50 +16,22 @@ export class PlaceInsertPage implements OnInit {
   constructor(
     private location: Location,
     private NavParams: NavParams,
-<<<<<<< HEAD
-    private modalCtrl: ModalController
-  ) {
-
-=======
     private modalCtrl: ModalController,
     private PlaceService: PlaceService,
     private alertController: AlertController
   ) {
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
     this.name_th = "";
     this.name_en = "";
     this.status = "true";
   }
 
-<<<<<<< HEAD
-
-  public closeModal() {
-    this.modalCtrl.dismiss({
-      'dismissed': true
-    });
-=======
   public closeModal() {
     this.modalCtrl.dismiss("close");
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   }
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
-  back(){
-    this.location.back();
-  }
-  insert_place() {
-    this.modalCtrl.dismiss({
-      'dismissed': true,
-      'name_th': this.name_th,
-      'name_en': this.name_en,
-      'status': this.status
-    })
-  }
-
-=======
   back() {
     this.location.back();
   }
@@ -97,5 +63,4 @@ export class PlaceInsertPage implements OnInit {
     await alert.present();
   }
 
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
 }

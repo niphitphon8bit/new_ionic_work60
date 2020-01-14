@@ -19,11 +19,7 @@ export class BankInsertPage implements OnInit {
     private location: Location,
     private NavParams: NavParams,
     private modalCtrl: ModalController,
-<<<<<<< HEAD
-    private BankInsertPage: BankInsertService
-=======
     private BankInsertService: BankInsertService
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
   ) {
     this.balance_name = "";
     this.name = "";
@@ -48,11 +44,7 @@ export class BankInsertPage implements OnInit {
   }
 
   get_all_bank_base() {
-<<<<<<< HEAD
-    this.BankInsertPage.get_all_bank_base_data().subscribe((res) => {
-=======
     this.BankInsertService.get_all_bank_base_data().subscribe((res) => {
->>>>>>> 69258dc849e25398873b057b31e346b51c1e9e4b
       this.db_bank_bases = res;
       console.log(this.db_bank_bases);
       // this.set_bank_status();
