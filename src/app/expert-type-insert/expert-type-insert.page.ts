@@ -1,6 +1,9 @@
-import { NavParams, ModalController } from '@ionic/angular';
+import { NavParams, ModalController, AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { ExpertTypeService } from '../service/expert-type.service';
+
+
 @Component({
   selector: 'app-expert-type-insert',
   templateUrl: './expert-type-insert.page.html',
@@ -15,7 +18,10 @@ export class ExpertTypeInsertPage implements OnInit {
   constructor(
     private location: Location,
     private NavParams: NavParams,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private expertTypeService: ExpertTypeService,
+    private alertController: AlertController
+
   ) {
     this.name_th = "";
     this.name_en = "";
@@ -23,9 +29,7 @@ export class ExpertTypeInsertPage implements OnInit {
   }
 
   public closeModal() {
-    this.modalCtrl.dismiss({
-      'dismissed': true
-    });
+    this.modalCtrl.dismiss("close");
   }
 
   ngOnInit() {
@@ -36,11 +40,33 @@ export class ExpertTypeInsertPage implements OnInit {
   }
 
   insert_expert_type() {
-    this.modalCtrl.dismiss({
-      'dismissed': true,
-      'name_th': this.name_th,
-      'name_en': this.name_en,
-      'status': this.status
+    this.expertTypeService.insert_expert_type_data(this.name_th,this.name_en).subscribe((res) => {
+      if(res.affectedRows > 0){
+        this.presentAlert("บันทึกสำเร็จ","รายการประเภทวิทยากรเพิ่มเรียบร้อย")
+      }else{
+        this.presentAlert("ไม่สามารถบันทึกข้อมูลได้","กรุณาติดต่อผู้ดูแลระบบ")
+      }
     })
+    
   }
+
+  async presentAlert(title:string,description:string) {
+    const alert = await this.alertController.create({
+      header: title,
+      message: description,
+      buttons: [
+        {
+          text: 'ตกลง',
+          handler: (event) => {
+            this.closeModal()
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 }
+
+

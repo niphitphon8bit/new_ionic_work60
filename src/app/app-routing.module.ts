@@ -94,6 +94,11 @@ const routes: Routes = [
     path: 'food-update',
     loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
   },
+  {
+    path: 'expert-type-update',
+    loadChildren: () => import('./expert-type-update/expert-type-update.module').then( m => m.ExpertTypeUpdatePageModule)
+  },
+
 ]
 ;
 @NgModule({
