@@ -31,7 +31,6 @@ export class BankPage implements OnInit {
    ngOnInit() {
   }
 
-  
    remove_bank(bank){
     let index = this.banks.indexOf(bank);
     if(index > -1){
