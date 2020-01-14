@@ -20,7 +20,7 @@ import { SkillInsertPage } from './skill-insert/skill-insert.page';
 import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.page';
 
 import { FoodUpdatePage } from './food-update/food-update.page';
-
+import { MajorUpdatePage } from './major-update/major-update.page';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { FoodUpdatePage } from './food-update/food-update.page';
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    FoodUpdatePage
+    FoodUpdatePage,
+    MajorUpdatePage
   ],
   entryComponents: [
     BankInsertPage,
@@ -41,7 +42,8 @@ import { FoodUpdatePage } from './food-update/food-update.page';
     DevelopsInsertPage,
     MajorInsertPage,
     ExpertInInsertPage,
-    FoodUpdatePage
+    FoodUpdatePage,
+    MajorUpdatePage
   ],
   imports: [
     BrowserModule,

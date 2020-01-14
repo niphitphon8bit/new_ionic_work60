@@ -93,7 +93,11 @@ const routes: Routes = [
   } , {
     path: 'food-update',
     loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
+  },  {
+    path: 'major-update',
+    loadChildren: () => import('./major-update/major-update.module').then( m => m.MajorUpdatePageModule)
   },
+
 ]
 ;
 @NgModule({
