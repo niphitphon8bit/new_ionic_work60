@@ -1,43 +1,27 @@
+import { Component, OnInit, Input } from '@angular/core';
 import { NavParams, ModalController, AlertController } from '@ionic/angular';
-import { Component, OnInit } from '@angular/core';
-import { Location } from "@angular/common";
 import { FoodTypeService } from '../service/food-type.service';
+
 @Component({
-  selector: 'app-food-insert',
-  templateUrl: './food-insert.page.html',
-  styleUrls: ['./food-insert.page.scss'],
+  selector: 'app-food-update',
+  templateUrl: './food-update.page.html',
+  styleUrls: ['./food-update.page.scss'],
 })
-export class FoodInsertPage implements OnInit {
+export class FoodUpdatePage implements OnInit {
 
-  private name_th: string;
-  private name_en: string;
-  private status: string;
-
+  @Input() name_th: string;
+  @Input() name_en: string;
+  @Input() ft_id: string;
   constructor(
-    private location: Location,
-    private NavParams: NavParams,
     private modalCtrl: ModalController,
     private foodTypeService: FoodTypeService,
-    private alertController: AlertController
-  ) {
-    this.name_th = "";
-    this.name_en = "";
-    this.status = "true";
-  }
-
-  public closeModal() {
-    this.modalCtrl.dismiss("close");
-  }
+    private alertController: AlertController) {}
 
   ngOnInit() {
   }
 
-  back() {
-    this.location.back();
-  }
-
-  insert_food_type() {
-    this.foodTypeService.insert_food_type_data(this.name_th,this.name_en).subscribe((res) => {
+  update_food_type() {
+    this.foodTypeService.update_food_type_data(this.ft_id,this.name_th,this.name_en).subscribe((res) => {
       if(res.affectedRows > 0){
         this.presentAlert("บันทึกสำเร็จ","รายการประเภทอาหารถูกเพิ่มเรียบร้อย")
       }else{
@@ -62,6 +46,10 @@ export class FoodInsertPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  closeModal() {
+    this.modalCtrl.dismiss("close");
   }
 
 }

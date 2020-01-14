@@ -90,7 +90,11 @@ const routes: Routes = [
   },  {
     path: 'place-insert',
     loadChildren: () => import('./place-insert/place-insert.module').then( m => m.PlaceInsertPageModule)
-  },]
+  } , {
+    path: 'food-update',
+    loadChildren: () => import('./food-update/food-update.module').then( m => m.FoodUpdatePageModule)
+  },
+]
 ;
 @NgModule({
   imports: [
