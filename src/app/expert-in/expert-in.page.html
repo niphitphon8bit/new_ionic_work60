@@ -22,28 +22,31 @@
 
         <ion-item-sliding *ngFor="let expert of db_expert_in">
             <ion-item>
-                <ion-label>{{expert.ep_fname}}</ion-label>
-                <ion-toggle color="success" [(ngModel)]="expert.status" (click)="change(expert)"></ion-toggle>
+                <ion-label>{{expert.ep_fname}} {{expert.ep_lname}} </ion-label>
+                <ion-toggle color="success" [(ngModel)]="expert.ep_active" (click)="update_status_expert_in(expert)"></ion-toggle>
             </ion-item>
             <ion-item-options side="end">
-                <ion-item-option (click)="remove_expert_in(expert)" color="danger">
+                <ion-item-option (click)="edit_expert_in(expert)" color="warning">
+                    <ion-icon name="create"></ion-icon>
+                </ion-item-option>
+                <ion-item-option (click)="remove_db_expert_in(expert)" color="danger">
                     <ion-icon name="trash"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
         </ion-item-sliding>
 
 
-        <ion-item-sliding *ngFor="let expert of experts">
+        <!-- <ion-item-sliding *ngFor="let expert of experts">
             <ion-item>
-                <ion-label>{{expert.name_th}}</ion-label>
-                <ion-toggle color="success" [(ngModel)]="expert.status"></ion-toggle>
+                <ion-label>{{expert.ep_fname}}{{expert.ep_lname}}</ion-label>
+                <ion-toggle color="success" [(ngModel)]="expert.ep_active"></ion-toggle>
             </ion-item>
             <ion-item-options side="end">
                 <ion-item-option (click)="remove_expert_in(expert)" color="danger">
                     <ion-icon name="trash"></ion-icon>
                 </ion-item-option>
             </ion-item-options>
-        </ion-item-sliding>
+        </ion-item-sliding> -->
 
 
 

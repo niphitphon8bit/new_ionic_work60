@@ -6,7 +6,7 @@ import { FoodInsertPage } from './food-insert/food-insert.page';
 import { PlaceInsertPage } from './place-insert/place-insert.page';
 import { BankInsertPage } from './bank-insert/bank-insert.page';
 import { Http, HttpModule } from '@angular/http'
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -20,7 +20,8 @@ import { ExpertTypeInsertPage } from './expert-type-insert/expert-type-insert.pa
 import { FoodUpdatePage } from './food-update/food-update.page';
 import { PlaceUpdatePage } from './place-update/place-update.page';
 import { BankUpdatePage } from './bank-update/bank-update.page';
-
+import { ExpertInUpdatePage } from "./expert-in-update/expert-in-update.page"
+import { MajorUpdatePage } from './major-update/major-update.page';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,9 @@ import { BankUpdatePage } from './bank-update/bank-update.page';
     ExpertInInsertPage,
     FoodUpdatePage,
     PlaceUpdatePage,
-    BankUpdatePage
+    BankUpdatePage,
+    MajorUpdatePage,
+    ExpertInUpdatePage
   ],
   entryComponents: [
     BankInsertPage,
@@ -45,7 +48,9 @@ import { BankUpdatePage } from './bank-update/bank-update.page';
     ExpertInInsertPage,
     FoodUpdatePage,
     PlaceUpdatePage,
-    BankUpdatePage
+    BankUpdatePage,
+    MajorUpdatePage,
+    ExpertInUpdatePage
   ],
   imports: [
     BrowserModule,
